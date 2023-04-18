@@ -4,7 +4,6 @@ import "./reset.css";
 import "./App.css";
 
 function App() {
-  // const test = window.location.href;
   return (
     <div className="App">
       <Home />
