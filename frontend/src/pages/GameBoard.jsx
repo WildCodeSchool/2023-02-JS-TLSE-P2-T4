@@ -16,6 +16,22 @@ const BoardGrid = styled.div`
   }
 `;
 
+const LaunchButton = styled.button`
+  @media (min-width: 768px) {
+    grid-area: 2/3/4/6;
+    align-self: center;
+    margin: 0 auto;
+    width: 40%;
+    height: 8%;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    padding: 2.4rem;
+    gap: 1.6rem;
+    font-size: 1.8rem;
+  }
+`;
+
 function Board() {
   return (
     <BoardGrid colMobile={3} rowMobile={7} colDesk={7} rowDesk={4}>
@@ -109,6 +125,7 @@ function Board() {
         positionColDesk={2}
         positionRowDesk={4}
       />
+      <LaunchButton>Launch</LaunchButton>
     </BoardGrid>
   );
 }
