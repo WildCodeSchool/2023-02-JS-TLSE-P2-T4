@@ -1,0 +1,80 @@
+@import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;400&display=swap");
+
+:root {
+  --default-light-color: #fffbf2;
+  --secondary-color: #ffd84d;
+  --bg-black-transparent: rgba(0, 0, 0, 0.6);
+  --video-games-color: #FF5858;
+  --music-color: #FFA621;
+  --science-nature-color: #557AFF;
+  --history-color:#68E4FF;
+  --geography-color:#FFE663;
+  --general-knowledge-color:#B260CE;
+  font-family: Inder, system-ui, Avenir, Helvetica, Arial, sans-serif;
+  line-height: 1.5;
+  font-weight: 400;
+
+  color-scheme: light dark;
+  color: var(--default-light-color);
+
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+  -webkit-text-size-adjust: 100%;
+  box-sizing: border-box;
+  -moz-box-sizing: border-box;
+  -webkit-box-sizing: border-box;
+}
+
+a {
+  font-weight: 500;
+  font-size: 1.4rem;
+  color: var(--default-light-color);
+  text-decoration: inherit;
+}
+a:hover {
+  color: var(--secondary-color);
+}
+
+body {
+  background: radial-gradient(
+      85.99% 85.99% at 50% 50%,
+      var(--bg-black-transparent) 44.27%,
+      rgba(0, 0, 0, 0) 100%
+    ),
+    url(C:\Users\cyril\Desktop\projet_2_quizilla\src\assets\IMG_0272.JPG);
+  background-size: cover;
+  background-position: center;
+  background-repeat: no-repeat;
+  margin: 0;
+  height: 100vh;
+}
+
+button {
+  width: auto;
+  border-radius: 50px;
+  border: 1px solid transparent;
+  padding: 0.6em 1.2em;
+  font-size: 1.6rem;
+  font-weight: 500;
+  font-family: inherit;
+  background-color: var(--bg-black-transparent);
+  cursor: pointer;
+  transition: border-color 0.25s;
+}
+button:hover {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+button:focus {
+  outline: 2px solid var(--secondary-color);
+  color: var(--secondary-color);
+}
+
+.links {
+    display: flex;
+    align-items: center;
+    margin-right: 1.6rem;
+    gap: 6.4rem;
+  }
