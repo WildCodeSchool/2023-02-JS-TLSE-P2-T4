@@ -1,31 +1,36 @@
 import React, { useState } from "react";
 // eslint-disable-next-line import/no-extraneous-dependencies
 import { Wheel } from "react-custom-roulette";
+import "./SpinWheel.css";
 
 const data = [
   {
+    name: "General Knowledge",
     option: "General Knowledge",
-    style: { backgroundColor: "lightgrey", textColor: "black", fontSize: 15 },
+    style: {
+      backgroundColor: "#b260ce",
+      textColor: "black",
+    },
   },
   {
     option: "Music",
-    style: { backgroundColor: "purple", textColor: "black" },
+    style: { backgroundColor: "#ffa621", textColor: "black" },
   },
   {
     option: "Video Games",
-    style: { backgroundColor: "orange", textColor: "black" },
+    style: { backgroundColor: "#ff5858", textColor: "black" },
   },
   {
     option: "Science & nature",
-    style: { backgroundColor: "blue", textColor: "black" },
+    style: { backgroundColor: "#557aff", textColor: "black" },
   },
   {
     option: "Geography",
-    style: { backgroundColor: "yellow", textColor: "black" },
+    style: { backgroundColor: "#ffe663", textColor: "black" },
   },
   {
     option: "History",
-    style: { backgroundColor: "green", textColor: "black" },
+    style: { backgroundColor: "#68e4ff", textColor: "black" },
   },
 ];
 
@@ -43,20 +48,22 @@ function SpinWheel() {
     }
   };
   return (
-    <div>
-      <Wheel
-        mustStartSpinning={mustSpin}
-        prizeNumber={prizeNumber}
-        data={data}
-        onStopSpinning={() => {
-          setMustSpin(false);
-          setShowCat(true);
-        }}
-      />
-      {showCat && <p>{prizeNumber}</p>}
-      <button type="button" onClick={handleSpinClick}>
-        Launch
-      </button>
+    <div className="modalSpinWheel">
+      <div className="modalSpinWheel-content">
+        <Wheel
+          mustStartSpinning={mustSpin}
+          prizeNumber={prizeNumber}
+          data={data}
+          onStopSpinning={() => {
+            setMustSpin(false);
+            setShowCat(true);
+          }}
+        />
+        {showCat && <p>{data[prizeNumber].name}</p>}
+        <button type="button" onClick={handleSpinClick}>
+          Launch
+        </button>
+      </div>
     </div>
   );
 }

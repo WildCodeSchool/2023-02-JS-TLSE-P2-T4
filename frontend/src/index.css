@@ -5,12 +5,12 @@
   --default-light-color: #fffbf2;
   --secondary-color: #ffd84d;
   --bg-black-transparent: rgba(0, 0, 0, 0.6);
-  --video-games-color: #FF5858;
-  --music-color: #FFA621;
-  --science-nature-color: #557AFF;
-  --history-color:#68E4FF;
-  --geography-color:#FFE663;
-  --general-knowledge-color:#B260CE;
+  --video-games-color: #ff5858;
+  --music-color: #ffa621;
+  --science-nature-color: #557aff;
+  --history-color: #68e4ff;
+  --geography-color: #ffe663;
+  --general-knowledge-color: #b260ce;
   font-family: Inder, system-ui, Avenir, Helvetica, Arial, sans-serif;
   line-height: 1.5;
   font-weight: 400;
@@ -73,8 +73,8 @@ button:focus {
 }
 
 .links {
-    display: flex;
-    align-items: center;
-    margin-right: 1.6rem;
-    gap: 6.4rem;
-  }
+  display: flex;
+  align-items: center;
+  margin-right: 1.6rem;
+  gap: 6.4rem;
+}
