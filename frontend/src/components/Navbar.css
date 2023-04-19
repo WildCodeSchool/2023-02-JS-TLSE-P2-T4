@@ -1,0 +1,20 @@
+.navigator img
+      {    
+        width: 55px;
+        cursor: pointer;
+      }
+    .navigator
+     {  
+       display: flex;
+       justify-content: space-between;
+       background-color: black;
+     
+
+     }
+
+
+
+@media screen and (min-width: 768px) {
+     
+    
+}
