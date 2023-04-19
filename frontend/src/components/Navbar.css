@@ -1,6 +1,6 @@
 .navigator img
       {    
-        width: 55px;
+        width: 95px;
         cursor: pointer;
       }
     .navigator
@@ -8,7 +8,8 @@
        display: flex;
        justify-content: space-between;
        background-color: black;
-     
+       align-items: center;
+       padding: 0 1rem;
 
      }
 
@@ -16,5 +17,10 @@
 
 @media screen and (min-width: 768px) {
      
-    
+    .Rules, .About, .App
+    {
+      font-size: 3rem;
+      color:red;
+      
+    }  
 }
