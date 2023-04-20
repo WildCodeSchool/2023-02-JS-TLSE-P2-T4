@@ -17,3 +17,10 @@
   align-items: center;
   border-radius: 10px;
 }
+.showSelectedCat {
+  /* transition: 300ms; */
+  display: flex;
+  align-items: center;
+  gap: 24px;
+  font-size: 32px;
+}

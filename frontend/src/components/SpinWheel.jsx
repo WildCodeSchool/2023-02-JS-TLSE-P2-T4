@@ -7,30 +7,40 @@ const data = [
   {
     name: "General Knowledge",
     option: "General Knowledge",
+    image: { uri: "./src/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
     style: {
       backgroundColor: "#b260ce",
-      textColor: "black",
     },
   },
   {
+    name: "Music",
     option: "Music",
-    style: { backgroundColor: "#ffa621", textColor: "black" },
+    image: { uri: "./src/assets/Music_Icon.svg", offsetY: 160 },
+    style: { backgroundColor: "#ffa621" },
   },
   {
+    name: "Video Games",
     option: "Video Games",
-    style: { backgroundColor: "#ff5858", textColor: "black" },
+    image: { uri: "./src/assets/VideoGames_Icon.svg", offsetY: 160 },
+    style: { backgroundColor: "#ff5858" },
   },
   {
+    name: "Science & nature",
     option: "Science & nature",
-    style: { backgroundColor: "#557aff", textColor: "black" },
+    image: { uri: "./src/assets/Science&Nature_Icon.svg", offsetY: 160 },
+    style: { backgroundColor: "#557aff" },
   },
   {
+    name: "Geography",
     option: "Geography",
-    style: { backgroundColor: "#ffe663", textColor: "black" },
+    image: { uri: "./src/assets/Geography_Icon.svg", offsetY: 160 },
+    style: { backgroundColor: "#ffe663" },
   },
   {
+    name: "History",
     option: "History",
-    style: { backgroundColor: "#68e4ff", textColor: "black" },
+    image: { uri: "./src/assets/History_Icon.svg", offsetY: 160 },
+    style: { backgroundColor: "#68e4ff" },
   },
 ];
 
@@ -58,8 +68,17 @@ function SpinWheel() {
             setMustSpin(false);
             setShowCat(true);
           }}
+          spinDuration={0.6}
         />
-        {showCat && <p>{data[prizeNumber].name}</p>}
+        {showCat && (
+          <div className="showSelectedCat">
+            <img
+              src={data[prizeNumber].image.uri}
+              alt={data[prizeNumber].name}
+            />
+            <p>{data[prizeNumber].name}</p>
+          </div>
+        )}
         <button type="button" onClick={handleSpinClick}>
           Launch
         </button>
