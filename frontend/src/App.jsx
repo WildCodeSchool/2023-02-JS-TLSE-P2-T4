@@ -1,22 +1,22 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 // eslint-disable-next-line import/no-unresolved
-import Home from "@pages/Home";
+import Home from "./pages/Home";
 // eslint-disable-next-line import/no-unresolved
-import AboutUs from "@pages/AboutUs";
+import AboutUs from "./pages/AboutUs";
 // eslint-disable-next-line import/no-unresolved
-import Rules from "@pages/Rules";
+import Rules from "./pages/Rules";
 import Navbar from "./components/Navbar";
 
 function App() {
   return (
     <Router>
-      <div className="App">
+      <div className="app">
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
           <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/Rules" element={<Rules />} />
+          <Route path="/rules" element={<Rules />} />
         </Routes>
       </div>
     </Router>
