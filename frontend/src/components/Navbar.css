@@ -1,0 +1,81 @@
+ul {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+}
+/* - - - - - -  S M A R T P H O N E - - - - -*/
+.appLogo img {
+  display: block;
+  width: 74px;
+  height: 100%;
+  transition: transform 0.5s ease;
+}
+.navigator {
+  background: #000;
+}
+
+showNav {
+  display: none;
+}
+nav .menuPhone {
+  display: block;
+}
+.navbarLinks {
+  background-color: rgba(49, 32, 15, 0.953);
+  display: flex;
+  flex-direction: column;
+  right: 0;
+  border-radius: 0 0 6px 4px;
+  position: fixed;
+  padding: 1.8rem;
+  gap: 28px;
+  z-index: 5;
+}
+
+/* - - - -   D E S K T  O P  - - - - - - - */
+@media screen and (min-width: 768px) {
+  .appLogo img {
+    width: 116px;
+    cursor: pointer;
+    padding: 0 22px;
+  }
+  .showNav {
+    display: block;
+  }
+  .menuPhone {
+    display: none;
+  }
+  .navigator {
+    position: sticky;
+    top: -70px;
+    left: 0;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+    padding: 10 1rem;
+    width: 100%;
+    transition: 0.25s linear;
+    background: #0a0000;
+  }
+  .navbarLinks {
+    background-color: transparent;
+    display: flex;
+    flex-direction: row;
+    align-items: flex-start;
+    padding: 0px;
+    gap: 34px;
+  }
+  .navbarLink {
+    padding: 6px 22px;
+    border-radius: 4px;
+    border: 1px solid transparent;
+  }
+  .navbarLink:hover {
+    border: 1px solid white;
+    transition: 0.5s;
+  }
+  nav-phone home-phone active {
+    display: none;
+  }
+}
