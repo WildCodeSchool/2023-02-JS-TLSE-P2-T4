@@ -1,7 +1,6 @@
 import React from "react";
 import { Link } from "react-router-dom";
 import "./Navbar.css";
-// eslint-disable-next-line import/no-extraneous-dependencies
 import { Divide as Hamburger } from "hamburger-react";
 
 function Navbar() {
