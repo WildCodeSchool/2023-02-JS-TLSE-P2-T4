@@ -25,13 +25,13 @@ function Navbar() {
       <div className="menu">
         <nav className="menuPhone">
           <ul className="linksPhone">
-            <li className="linkPhone">
+            <li className="navbarLink">
               <Link to="/">Home</Link>
             </li>
             <li className="navbarLink">
               <Link to="/rules">Rules</Link>
             </li>
-            <li className="linkPhone">
+            <li className="navbarLink">
               <Link to="/about-us">About Us</Link>
             </li>
           </ul>
