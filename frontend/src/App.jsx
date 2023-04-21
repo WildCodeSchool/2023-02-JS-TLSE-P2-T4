@@ -3,7 +3,6 @@ import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rules from "./pages/Rules";
-// eslint-disable-next-line import/no-named-as-default
 import Navbar from "./components/Navbar";
 
 function App() {
