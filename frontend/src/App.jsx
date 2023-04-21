@@ -1,10 +1,10 @@
 import "./App.css";
-import SpinWheel from "./components/SpinWheel";
+import Board from "./pages/GameBoard";
 
 function App() {
   return (
     <div className="App">
-      <SpinWheel />
+      <Board />
     </div>
   );
 }
