@@ -1,11 +1,9 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
-// eslint-disable-next-line import/no-unresolved
 import Home from "./pages/Home";
-// eslint-disable-next-line import/no-unresolved
 import AboutUs from "./pages/AboutUs";
-// eslint-disable-next-line import/no-unresolved
 import Rules from "./pages/Rules";
+// eslint-disable-next-line import/no-named-as-default
 import Navbar from "./components/Navbar";
 
 function App() {

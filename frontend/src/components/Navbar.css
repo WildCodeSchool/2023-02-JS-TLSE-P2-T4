@@ -21,10 +21,10 @@ nav .menuPhone {
   display: block;
 }
 .navbarLinks {
+  background-color: rgba(49, 32, 15, 0.953);
   display: flex;
   flex-direction: column;
   right: 0;
-  background-color: rgba(49, 32, 15, 0.953);
   border-radius: 0 0 6px 4px;
   position: fixed;
   padding: 1.8rem;
@@ -59,6 +59,7 @@ nav .menuPhone {
     background: #0a0000;
   }
   .navbarLinks {
+    background-color: transparent;
     display: flex;
     flex-direction: row;
     align-items: flex-start;
