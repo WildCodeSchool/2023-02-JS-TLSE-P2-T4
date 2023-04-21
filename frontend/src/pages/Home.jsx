@@ -1,8 +1,8 @@
 import "./Home.css";
-import Settings from "../components/Settings";
-import Board from "./GameBoard";
+import { Link } from "react-router-dom";
+// import Settings from "../components/Settings";
 
-function Home() {
+export default function Home() {
   return (
     <section className="homeBody">
       <section className="welcomeText">
@@ -13,14 +13,11 @@ function Home() {
         <p className="welcomeChoice">Try it !</p>
       </section>
       <section className="buttons">
-        <button type="button" onClick={<Settings />}>
-          Settings
-        </button>
-        <button type="button" onClick={<Board />}>
-          Start
-        </button>
+        <button type="button">Settings</button>
+        <Link to="/gameboard">
+          <button type="button">Start</button>
+        </Link>
       </section>
     </section>
   );
 }
-export default Home;
