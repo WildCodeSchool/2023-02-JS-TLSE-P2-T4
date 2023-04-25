@@ -76,7 +76,7 @@ const data = [
   },
 ];
 
-function Board() {
+function GameBoard() {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [showCat, setShowCat] = useState(false);
@@ -201,4 +201,4 @@ function Board() {
   );
 }
 
-export default Board;
+export default GameBoard;
