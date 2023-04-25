@@ -4,7 +4,7 @@ import "./SpinWheel.css";
 import PropTypes from "prop-types";
 
 function SpinWheel({
-  data,
+  categories,
   mustSpin,
   setMustSpin,
   prizeNumber,
@@ -14,7 +14,7 @@ function SpinWheel({
   showModal,
 }) {
   SpinWheel.propTypes = {
-    data: PropTypes.arrayOf(
+    categories: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
         option: PropTypes.string.isRequired,
@@ -36,7 +36,7 @@ function SpinWheel({
     showModal: PropTypes.bool,
   };
   SpinWheel.defaultProps = {
-    data: [],
+    categories: [],
     mustSpin: false,
     setMustSpin: false,
     prizeNumber: 0,
@@ -46,14 +46,14 @@ function SpinWheel({
     showModal: false,
   };
 
-  const { image, name } = data[prizeNumber];
+  const { image, name } = categories[prizeNumber];
 
   return (
     <div className={showModal ? "modalSpinWheel" : "notModalSpinWheel"}>
       <Wheel
         mustStartSpinning={mustSpin}
         prizeNumber={prizeNumber}
-        data={data}
+        data={categories}
         onStopSpinning={() => {
           setMustSpin(false);
           setShowCat(true);

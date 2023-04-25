@@ -35,7 +35,7 @@ const LaunchButton = styled.button`
   }
 `;
 
-const data = [
+const categories = [
   {
     name: "General Knowledge",
     option: "General Knowledge",
@@ -84,7 +84,7 @@ function GameBoard() {
 
   const handleSpinClick = () => {
     if (!mustSpin) {
-      const newPrizeNumber = Math.floor(Math.random() * data.length);
+      const newPrizeNumber = Math.floor(Math.random() * categories.length);
       setPrizeNumber(newPrizeNumber);
       setMustSpin(true);
       setShowCat(false);
@@ -188,7 +188,7 @@ function GameBoard() {
         <LaunchButton onClick={handleSpinClick}>Launch</LaunchButton>
       </BoardGrid>
       <SpinWheel
-        data={data}
+        categories={categories}
         mustSpin={mustSpin}
         setMustSpin={setMustSpin}
         prizeNumber={prizeNumber}
