@@ -32,6 +32,7 @@ function Home({
           setSelectedTimer={setSelectedTimer}
           selectedDifficulty={selectedDifficulty}
           setSelectedDifficulty={setSelectedDifficulty}
+          setModalIsOpen={setModalIsOpen}
         />
       ) : (
         <section className="buttons">

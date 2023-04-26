@@ -11,35 +11,46 @@ function Settings({
   setSelectedTimer,
   selectedDifficulty,
   setSelectedDifficulty,
+  setModalIsOpen,
 }) {
   return (
-    <div className="blurSettings">
+    <>
+      <div
+        className="blurSettings"
+        role="button"
+        onClick={() => setModalIsOpen(false)}
+        onKeyDown={() => setModalIsOpen(false)}
+        tabIndex="0"
+        aria-label="Close Settings"
+      />
       <div className="modalSettings">
-        <div className="dropDown">
+        <div className="dropdown">
           <Dropdown
             value={selectedTimer}
             onChange={(e) => setSelectedTimer(e.value)}
             options={timer}
             optionLabel="valueT"
-            placeholder="Select your default timer"
-            className="w-full md:w-14rem"
+            placeholder="Select your default timer ..."
+            className="selectDropdown"
           />
         </div>
-        <div className="dropDown">
+        <div className="dropdown">
           <Dropdown
             value={selectedDifficulty}
             onChange={(e) => setSelectedDifficulty(e.value)}
             options={difficulty}
             optionLabel="valueD"
-            placeholder="Select a difficulty"
-            className="w-full md:w-14rem"
+            placeholder="Select a difficulty ..."
+            className="selectDropdown"
           />
         </div>
-        <Link to="/gameboard">
-          <button type="button">Start</button>
+        <Link to="/gameboard" className="linkStart">
+          <button type="button" className="button button-settings">
+            Start
+          </button>
         </Link>
       </div>
-    </div>
+    </>
   );
 }
 
@@ -54,10 +65,12 @@ Settings.propTypes = {
   setSelectedTimer: PropTypes.func,
   selectedDifficulty: PropTypes.objectOf(PropTypes.string),
   setSelectedDifficulty: PropTypes.func,
+  setModalIsOpen: PropTypes.func,
 };
 Settings.defaultProps = {
   setSelectedTimer: false,
   setSelectedDifficulty: false,
+  setModalIsOpen: false,
   selectedTimer: { valueT: 60 },
   selectedDifficulty: { valueD: "Easy" },
 };
