@@ -90,18 +90,3 @@
   color: yellow;
   border: 1px solid white;
 }
-/* - - - - A N I M A T I O N   L O G O - - - */
-@media (prefers-reduced-motion: no-preference) {
-  .appLogo {
-    animation: App-logo-spin infinite 15s linear;
-  }
-}
-
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
-  }
-}
