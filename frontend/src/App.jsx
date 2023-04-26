@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import Quiz from "./pages/Quiz";
 import GameBoard from "./pages/GameBoard";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
@@ -16,6 +17,7 @@ function App() {
           <Route path="/gameboard" element={<GameBoard />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/rules" element={<Rules />} />
+          <Route path="/gameboard/quiz" element={<Quiz />} />
         </Routes>
       </div>
     </Router>

@@ -92,7 +92,9 @@ Question.propTypes = {
   questions: PropTypes.arrayOf(
     PropTypes.shape({
       correct_answer: PropTypes.string,
-      incorrect_answers: PropTypes.string,
+      incorrect_answers: PropTypes.arrayOf({
+        incorrect_answer: PropTypes.string,
+      }),
       question: PropTypes.string,
     })
   ),
