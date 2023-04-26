@@ -1,5 +1,6 @@
 import "./App.css";
 import { BrowserRouter as Router, Routes, Route } from "react-router-dom";
+import GameBoard from "./pages/GameBoard";
 import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rules from "./pages/Rules";
@@ -12,6 +13,7 @@ function App() {
         <Navbar />
         <Routes>
           <Route path="/" element={<Home />} />
+          <Route path="/gameboard" element={<GameBoard />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/rules" element={<Rules />} />
         </Routes>
