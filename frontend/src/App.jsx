@@ -6,10 +6,9 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rules from "./pages/Rules";
 import Navbar from "./components/Navbar";
-// theme
-// import "primereact/resources/themes/lara-light-indigo/theme.css";
-// core
 import "primereact/resources/primereact.min.css";
+import Winner from "./pages/Winner";
+import Loser from "./pages/Loser";
 
 function App() {
   const timer = [
@@ -55,6 +54,8 @@ function App() {
           />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/rules" element={<Rules />} />
+          <Route path="/winner" element={<Winner />} />
+          <Route path="/loser" element={<Loser />} />
         </Routes>
       </div>
     </Router>

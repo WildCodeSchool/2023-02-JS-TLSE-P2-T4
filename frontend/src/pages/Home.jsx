@@ -35,12 +35,17 @@ function Home({
         />
       ) : (
         <section className="buttons">
-          <button type="button" onClick={() => setModalIsOpen(true)}>
+          <button
+            className="button settings"
+            type="button"
+            onClick={() => setModalIsOpen(true)}
+          >
             Settings
           </button>
 
           <Link to="/gameboard">
             <button
+              className="button start"
               type="button"
               onClick={() => {
                 setSelectedTimer({ valueT: 60 });
