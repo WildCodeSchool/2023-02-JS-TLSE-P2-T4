@@ -13,7 +13,6 @@ const Labels = [
   "GodZilla 10000",
 ];
 const scoretotal = 6851;
-// const labelLevels = [2000, 3000, 4000, 5000, 6000, 7000, 8000, 10000];
 export default function winner() {
   return (
     <section className="winnerBody">
