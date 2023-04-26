@@ -13,10 +13,13 @@ export default function Home() {
         <p className="welcomeChoice">Try it !</p>
       </section>
       <section className="buttons">
-        <button type="button">Settings</button>
-        <Link to="/gameboard">
-          <button type="button">Start</button>
-        </Link>
+        <button className="button start" type="button">
+          Start
+        </button>
+        <button className="button settings" type="button">
+          Settings
+        </button>
+        <Link to="/gameboard" />
       </section>
     </section>
   );
