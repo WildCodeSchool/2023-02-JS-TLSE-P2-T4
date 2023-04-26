@@ -1,0 +1,40 @@
+.question {
+  text-align: center;
+  font-size: 1.8em;
+  margin: 0 16px 1.4em 16px;
+  line-height: 1.4em;
+}
+
+.answers {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  gap: 12px;
+}
+
+.singleOption {
+  border-radius: 10px;
+  border: 2px solid rgba(255, 255, 255, 0.2);
+  font-size: 1.4em;
+  font-family: poppins, sans-serif;
+  margin: 0 24px;
+  white-space: pre-wrap;
+}
+
+.singleOption:hover {
+  border-color: var(--secondary-color);
+}
+.singleOption:focus,
+.singleOption:active {
+  outline: none;
+}
+
+.correct {
+  border: 2px solid yellowgreen;
+  color: yellowgreen;
+}
+
+.wrong {
+  border: 2px solid orangered;
+  color: orangered;
+}
