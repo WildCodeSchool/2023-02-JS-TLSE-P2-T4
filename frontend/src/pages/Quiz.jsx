@@ -1,6 +1,7 @@
 import Question from "@components/Question";
 import { useEffect, useState } from "react";
 import axios from "axios";
+import Timer from "@components/Timer";
 
 function Quiz() {
   // state permettant de stocker l'ensemble des questions fetch pour 1 quiz
@@ -20,7 +21,7 @@ function Quiz() {
       )
       .then((res) => setQuestions(res.data.results))
       .catch((err) => {
-        err.message;
+        err.message();
       });
   }, []);
 
@@ -30,7 +31,14 @@ function Quiz() {
         <div className="score">
           <p>Score : {score}</p>
         </div>
-        <div className="timer" />
+        <div className="timer">
+          <img
+            className="timeIcon"
+            src="frontend\src\assets\Timer_Icon.svg"
+            alt="time icon"
+          />
+          <Timer />
+        </div>
       </div>
 
       {questions ? (
