@@ -1,0 +1,17 @@
+.blurSettings {
+  display: flex;
+  top: 0;
+  left: 0;
+  width: "100vw";
+  height: "100vh";
+  border: red solid 1px;
+  padding: 20px;
+}
+.modalSettings {
+  background-color: rgba(0, 0, 0, 0.7);
+  align-items: "center";
+  justify-content: space-between;
+  justify-content: "center";
+  border: purple solid 1px;
+  padding: 20px;
+}
