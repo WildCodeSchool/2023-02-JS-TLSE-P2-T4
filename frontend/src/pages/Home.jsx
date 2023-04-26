@@ -1,9 +1,5 @@
 import "./Home.css";
-
-
 import { Link } from "react-router-dom";
-// import Settings from "../components/Settings";
-
 
 export default function Home() {
   return (
