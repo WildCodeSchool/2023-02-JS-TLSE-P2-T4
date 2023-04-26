@@ -2,7 +2,7 @@ import Question from "@components/Question";
 import { useEffect, useState } from "react";
 import axios from "axios";
 import Timer from "@components/Timer";
-import "./quiz.css";
+import "./Quiz.css";
 
 function Quiz() {
   // state permettant de stocker l'ensemble des questions fetch pour 1 quiz
