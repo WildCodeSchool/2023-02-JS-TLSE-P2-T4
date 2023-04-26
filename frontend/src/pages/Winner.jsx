@@ -29,8 +29,9 @@ export default function winner() {
         </ul>
       </section>
       <section className="buttons">
-        <button type="button"> New Game </button>
-        <Link to="/gameboard" />
+        <Link to="/gameboard">
+          <button type="button"> New Game </button>
+        </Link>
       </section>
     </section>
   );
