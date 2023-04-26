@@ -4,7 +4,7 @@ import { Link } from "react-router-dom";
 import PropTypes from "prop-types";
 import Settings from "../components/Settings";
 
-export default function Home({
+function Home({
   timer,
   difficulty,
   selectedTimer,
@@ -74,3 +74,5 @@ Home.defaultProps = {
   selectedDifficulty: { valueD: "Easy" },
   setSelectedDifficulty: false,
 };
+
+export default Home;

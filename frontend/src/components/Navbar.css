@@ -1,81 +1,92 @@
-ul {
-  list-style: none;
-  padding: 0;
-  margin: 0;
+.nav {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  height: 10vh;
+  background: transparent;
 }
-/* - - - - - -  S M A R T P H O N E - - - - -*/
 .appLogo img {
-  display: block;
-  width: 74px;
-  height: 100%;
-  transition: transform 0.5s ease;
-}
-.navigator {
-  background: #000;
+  width: 90px;
+  cursor: pointer;
+  color: #fff;
 }
 
-showNav {
+.nav__menu {
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 2rem;
+}
+.nav__toggler {
   display: none;
 }
-nav .menuPhone {
-  display: block;
-}
-.navbarLinks {
-  background-color: rgba(49, 32, 15, 0.953);
-  display: flex;
-  flex-direction: column;
-  right: 0;
-  border-radius: 0 0 6px 4px;
-  position: fixed;
-  padding: 1.8rem;
-  gap: 28px;
-  z-index: 5;
+.nav__toggler div {
+  width: 2.5rem;
+  height: 0.2rem;
+  margin: 0.4rem;
+  background: #fff;
+  transition: 0.3s ease-in;
 }
 
-/* - - - -   D E S K T  O P  - - - - - - - */
-@media screen and (min-width: 768px) {
-  .appLogo img {
-    width: 116px;
-    cursor: pointer;
-    padding: 0 22px;
-  }
-  .showNav {
+@media screen and (max-width: 768px) {
+  .nav__toggler {
     display: block;
+    cursor: pointer;
+    background: transparent;
+    border: none;
+    padding: 0;
   }
-  .menuPhone {
-    display: none;
+
+  .nav__toggler:focus {
+    outline: none;
   }
-  .navigator {
-    position: sticky;
-    top: -70px;
-    left: 0;
-    width: 100%;
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    padding: 10 1rem;
-    width: 100%;
-    transition: 0.25s linear;
-    background: #0a0000;
+
+  .appLogo img {
+    display: block;
+    width: 74px;
+    height: 100%;
+    transition: transform 0.5s ease;
   }
-  .navbarLinks {
-    background-color: transparent;
-    display: flex;
-    flex-direction: row;
-    align-items: flex-start;
-    padding: 0px;
-    gap: 34px;
+
+  .nav__menu {
+    position: fixed;
+    top: 8vh;
+    right: 0;
+    height: 26vh;
+    width: 35vw;
+    flex-direction: column;
+    transform: translateX(100%);
+    transition: 0.8s ease-in;
+    background: #000000;
+    z-index: 2;
+    padding: 8px;
   }
-  .navbarLink {
-    padding: 6px 22px;
-    border-radius: 4px;
-    border: 1px solid transparent;
-  }
-  .navbarLink:hover {
-    border: 1px solid white;
-    transition: 0.5s;
-  }
-  nav-phone home-phone active {
-    display: none;
-  }
+}
+/* Active Class */
+.nav__active {
+  transform: translateX(0%);
+}
+
+/* Toggle Icon Animation */
+
+.toggle .line1 {
+  transform: rotate(-45deg) translate(-8px, 5px);
+}
+.toggle .line2 {
+  opacity: 0;
+}
+.toggle .line3 {
+  transform: rotate(45deg) translate(-8px, -5px);
+}
+.nav__item {
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+.nav__item:hover {
+  transition: 0.5s;
+  color: yellow;
+  border: 1px solid white;
 }
