@@ -49,7 +49,7 @@ function App() {
             element={
               <GameBoard
                 selectedTimer={selectedTimer}
-                setSelectedTimer={setSelectedTimer}
+                selectedDifficulty={selectedDifficulty}
               />
             }
           />

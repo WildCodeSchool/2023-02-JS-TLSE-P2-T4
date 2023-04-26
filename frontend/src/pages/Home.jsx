@@ -43,8 +43,8 @@ export default function Home({
             <button
               type="button"
               onClick={() => {
-                setSelectedTimer(60);
-                setSelectedDifficulty("easy");
+                setSelectedTimer({ valueT: 60 });
+                setSelectedDifficulty({ valueD: "easy" });
               }}
             >
               Start

@@ -6,10 +6,10 @@
 }
 .welcomeText {
   width: 80vw;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
 }
@@ -40,7 +40,7 @@
     height: 20vh;
     flex-direction: column;
   }
-  .welcomeMessage{
+  .welcomeMessage {
     font-size: 2rem;
   }
   .welcomeComment {
@@ -48,7 +48,7 @@
     line-height: 2rem;
     padding-bottom: 1rem;
   }
-  .welcomeChoice{
+  .welcomeChoice {
     font-size: 1.25rem;
   }
 }
