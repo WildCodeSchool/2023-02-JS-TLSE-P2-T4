@@ -1,4 +1,3 @@
-
 .appHeader {
   font-size: 1.5rem;
   align-items: center;
@@ -43,19 +42,19 @@
   display: flex;
   justify-content: center;
 }
-.button{
+.button {
   width: 12rem;
-  padding:1rem;
+  padding: 1rem;
 }
 
 @media screen and (max-width: 428px) {
-  .welcomeText{
+  .welcomeText {
     height: 60vh;
   }
-  .linkPhone{
+  .linkPhone {
     display: none;
   }
-  .navbarLink{
+  .navbarLink {
     display: none;
   }
   .buttons {
@@ -63,9 +62,9 @@
     flex-direction: column;
     align-items: center;
   }
-  .welcomeMessage{
+  .welcomeMessage {
     font-size: 2.4rem;
-    margin-top:2rem;
+    margin-top: 2rem;
   }
   .welcomeComment {
     font-size: 1.5rem;
@@ -73,39 +72,39 @@
     padding-bottom: 1rem;
     margin: 0 2rem;
   }
-  .welcomeChoice{
+  .welcomeChoice {
     font-size: 1.6rem;
   }
-  .button{
+  .button {
     width: 12rem;
-    padding:1rem;
+    padding: 1rem;
     margin: 1rem;
   }
 }
 @media screen and (max-height: 428px) {
-  .linkPhone{
+  .linkPhone {
     display: none;
   }
-  .navbarLink{
+  .navbarLink {
     display: none;
   }
-  .welcomeText{
+  .welcomeText {
     height: 60vh;
   }
-  .welcomeMessage{
+  .welcomeMessage {
     font-size: 2rem;
-    margin-top:2rem;
+    margin-top: 2rem;
   }
   .welcomeComment {
     font-size: 1.5rem;
     line-height: 2rem;
     padding-bottom: 1rem;
   }
-  .welcomeChoice{
+  .welcomeChoice {
     font-size: 1.25rem;
   }
+
   .buttons {
     height: 30vh;
-    
   }
 }
