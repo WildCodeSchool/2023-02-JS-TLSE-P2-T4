@@ -19,9 +19,9 @@ function App() {
           <Route path="/gameboard" element={<GameBoard />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/rules" element={<Rules />} />
-          <Route path="/gameboard/quiz" element={<Quiz />} />
           <Route path="/winner" element={<Winner />} />
           <Route path="/loser" element={<Loser />} />
+          <Route path="/gameboard/quiz" element={<Quiz />} />
         </Routes>
       </div>
     </Router>
