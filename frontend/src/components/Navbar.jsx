@@ -3,31 +3,31 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-  const [active, setActive] = useState("nav__menu");
-  const [icon, setIcon] = useState("nav__toggler");
+  const [active, setActive] = useState("navmenu");
+  const [icon, setIcon] = useState("navtoggler");
   const navToggle = () => {
-    if (active === "nav__menu") {
-      setActive("nav__menu nav__active");
-    } else setActive("nav__menu");
+    if (active === "navmenu") {
+      setActive("navmenu navactive");
+    } else setActive("navmenu");
 
     // Icon Toggler
-    if (icon === "nav__toggler") {
-      setIcon("nav__toggler toggle");
-    } else setIcon("nav__toggler");
+    if (icon === "navtoggler") {
+      setIcon("navtoggler toggle");
+    } else setIcon("navtoggler");
   };
   return (
     <nav className="nav">
       <div className="appLogo">
-        <img src="src/assets/logo.png" alt="logo Quizilla" />
+        <img src="/assets/logo.png" alt="logo Quizilla" />
       </div>
       <ul className={active}>
-        <li className="nav__item">
+        <li className="navitem">
           <Link to="/">Home</Link>
         </li>
-        <li className="nav__item">
+        <li className="navitem">
           <Link to="/rules">Rules</Link>
         </li>
-        <li className="nav__item">
+        <li className="navitem">
           <Link to="/about-us">About Us</Link>
         </li>
       </ul>
@@ -39,5 +39,4 @@ function Navbar() {
     </nav>
   );
 }
-
 export default Navbar;

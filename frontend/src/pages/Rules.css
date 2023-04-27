@@ -5,13 +5,13 @@
 
 .rule h1 {
   font-size: 35px;
-  color: black;
+  color: #fff;
   line-height: 5.5px;
 }
 .rule h2 {
   font-size: 30px;
   margin-top: 50px;
-  color: brown;
+  color: yellow;
   font-weight: bold;
   margin: 6vh;
   padding-top: 45px;
@@ -20,7 +20,7 @@
   margin: 40px;
   align-items: center;
   text-align: center;
-  color: black;
+  color: #fff;
   line-height: 4.2vh;
 }
 span {
@@ -53,6 +53,7 @@ span {
   text-align: center;
   font-size: 36px;
   font-family: "Dancing Script", cursive;
+  color: yellow;
 }
 
 @media screen and (max-width: 768px) {

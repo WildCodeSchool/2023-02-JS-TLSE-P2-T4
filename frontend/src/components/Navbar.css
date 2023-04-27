@@ -11,16 +11,16 @@
   color: #fff;
 }
 
-.nav__menu {
+.navmenu {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
-.nav__toggler {
+.navtoggler {
   display: none;
 }
-.nav__toggler div {
+.navtoggler div {
   width: 2.5rem;
   height: 0.2rem;
   margin: 0.4rem;
@@ -29,7 +29,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .nav__toggler {
+  .navtoggler {
     display: block;
     cursor: pointer;
     background: transparent;
@@ -37,7 +37,7 @@
     padding: 0;
   }
 
-  .nav__toggler:focus {
+  .navtoggler:focus {
     outline: none;
   }
 
@@ -48,7 +48,7 @@
     transition: transform 0.5s ease;
   }
 
-  .nav__menu {
+  .navmenu {
     position: fixed;
     top: 8vh;
     right: 0;
@@ -62,12 +62,12 @@
     padding: 8px;
   }
 }
-/* Active Class */
+/* Active Class /
 .nav__active {
   transform: translateX(0%);
 }
 
-/* Toggle Icon Animation */
+/ Toggle Icon Animation */
 
 .toggle .line1 {
   transform: rotate(-45deg) translate(-8px, 5px);
@@ -78,14 +78,14 @@
 .toggle .line3 {
   transform: rotate(45deg) translate(-8px, -5px);
 }
-.nav__item {
+.navitem {
   color: white;
   border: 1px solid transparent;
   border-radius: 3px;
   text-decoration: none;
   padding: 4px 8px;
 }
-.nav__item:hover {
+.navitem:hover {
   transition: 0.5s;
   color: yellow;
   border: 1px solid white;
