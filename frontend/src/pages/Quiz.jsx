@@ -1,7 +1,7 @@
-import Question from "@components/Question";
 import { useEffect, useState } from "react";
 import axios from "axios";
-import Timer from "@components/Timer";
+import Question from "../components/Question";
+import Timer from "../components/Timer";
 import "./Quiz.css";
 
 function Quiz() {

@@ -15,10 +15,11 @@
   align-items: center;
 }
 .welcomeText {
-  height: 40vh;
+  width: 80vw;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-evenly;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
 }
@@ -38,9 +39,9 @@
   padding-bottom: 1rem;
 }
 .buttons {
-  width: 60vw;
+  width: 70%;
   display: flex;
-  justify-content: center;
+  justify-content: space-around;
 }
 .button {
   width: 12rem;
