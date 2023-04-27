@@ -2,6 +2,7 @@
 import { Wheel } from "react-custom-roulette";
 import "./SpinWheel.css";
 import PropTypes from "prop-types";
+import { Link } from "react-router-dom";
 
 function SpinWheel({
   categories,
@@ -10,7 +11,6 @@ function SpinWheel({
   prizeNumber,
   showCat,
   setShowCat,
-  handleSpinClick,
   showModal,
 }) {
   SpinWheel.propTypes = {
@@ -32,7 +32,6 @@ function SpinWheel({
     prizeNumber: PropTypes.number,
     showCat: PropTypes.bool,
     setShowCat: PropTypes.func,
-    handleSpinClick: PropTypes.func,
     showModal: PropTypes.bool,
   };
   SpinWheel.defaultProps = {
@@ -42,7 +41,6 @@ function SpinWheel({
     prizeNumber: 0,
     showCat: false,
     setShowCat: false,
-    handleSpinClick: 0,
     showModal: false,
   };
 
@@ -66,9 +64,9 @@ function SpinWheel({
           <p>{name}</p>
         </div>
       )}
-      <button type="button" onClick={handleSpinClick}>
-        Start Quiz
-      </button>
+      <Link to="quiz">
+        <button type="button">Start Quiz</button>
+      </Link>
     </div>
   );
 }
