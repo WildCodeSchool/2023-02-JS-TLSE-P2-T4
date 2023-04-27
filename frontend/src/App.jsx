@@ -6,6 +6,8 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rules from "./pages/Rules";
 import Navbar from "./components/Navbar";
+import Winner from "./pages/Winner";
+import Loser from "./pages/Loser";
 
 function App() {
   return (
@@ -17,7 +19,12 @@ function App() {
           <Route path="/gameboard" element={<GameBoard />} />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/rules" element={<Rules />} />
+
           <Route path="/gameboard/quiz" element={<Quiz />} />
+
+          <Route path="/winner" element={<Winner />} />
+          <Route path="/loser" element={<Loser />} />
+
         </Routes>
       </div>
     </Router>
