@@ -30,7 +30,7 @@ function Question({
         ])
       );
     }
-  }, [questions, currentQuest]);
+  }, [currentQuest]);
 
   //   fonction permettant d'afficher la bonne et les mauvaises réponses après un clic sur l'une d'entre elles.
   const handleClickClasses = (opt) => {
@@ -74,7 +74,7 @@ function Question({
                         ? rightAnswerClass
                         : wrongAnswerClass
                     }`}
-                  key={questions[currentQuest].question}
+                  key={opt}
                   type="button"
                 >
                   {opt}
@@ -93,7 +93,9 @@ Question.propTypes = {
     PropTypes.shape({
       correct_answer: PropTypes.string,
       incorrect_answers: PropTypes.arrayOf({
-        incorrect_answer: PropTypes.string,
+        0: PropTypes.string,
+        1: PropTypes.string,
+        2: PropTypes.string,
       }),
       question: PropTypes.string,
     })

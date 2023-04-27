@@ -7,6 +7,7 @@ import "./Quiz.css";
 function Quiz() {
   // state permettant de stocker l'ensemble des questions fetch pour 1 quiz
   const [questions, setQuestions] = useState();
+  const [qWithoutIds, setQWithoutIds] = useState();
   // state pour incrémenter le score
   const [score, setScore] = useState(0);
   // state permettant de mettre à jour la question affichée de façon randomisée
@@ -20,11 +21,24 @@ function Quiz() {
       .get(
         "https://opentdb.com/api.php?amount=50&category=9&difficulty=medium&type=multiple"
       )
-      .then((res) => setQuestions(res.data.results))
+      .then((res) => setQWithoutIds(res.data.results))
       .catch((err) => {
         err.message();
       });
   }, []);
+
+  function addUniqueIds(array) {
+    const newArray = array.map((item, index) => ({
+      ...item,
+      id: index,
+    }));
+    setQuestions(newArray);
+  }
+  useEffect(() => {
+    if (qWithoutIds) {
+      addUniqueIds(qWithoutIds);
+    }
+  }, [qWithoutIds]);
 
   return (
     <div className="quizContainer">
