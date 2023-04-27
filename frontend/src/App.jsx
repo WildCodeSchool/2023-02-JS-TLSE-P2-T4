@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rules from "./pages/Rules";
 import Navbar from "./components/Navbar";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import "primereact/resources/primereact.min.css";
 import Winner from "./pages/Winner";
 import Loser from "./pages/Loser";
