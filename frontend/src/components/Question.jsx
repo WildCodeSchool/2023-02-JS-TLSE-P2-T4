@@ -9,11 +9,13 @@ function Question({
   setScore,
   score,
 }) {
-  // state de modification des réponses
+  //   state de modification des réponses
   const [options, setOptions] = useState();
   //   state de modification des classes des réponses
   const [wrongAnswerClass, setWrongAnswerClass] = useState("");
   const [rightAnswerClass, setRightAnswerClass] = useState("");
+  //   state de modification de l'état cliquable
+  const [clicked, setClicked] = useState(false);
 
   // fonction permettant de mélanger les éléments d'un tableau.
   const handleShuffle = (arr) => {
@@ -29,6 +31,7 @@ function Question({
           ...questions[currentQuest].incorrect_answers,
         ])
       );
+      setClicked(false);
     }
   }, [currentQuest]);
 
@@ -65,6 +68,7 @@ function Question({
               return (
                 <button
                   onClick={() => {
+                    setClicked(true);
                     handleClickClasses(opt);
                     handleClickNext();
                   }}
@@ -76,6 +80,7 @@ function Question({
                     }`}
                   key={opt}
                   type="button"
+                  disabled={clicked}
                 >
                   {opt}
                 </button>
@@ -92,11 +97,7 @@ Question.propTypes = {
   questions: PropTypes.arrayOf(
     PropTypes.shape({
       correct_answer: PropTypes.string,
-      incorrect_answers: PropTypes.arrayOf({
-        0: PropTypes.string,
-        1: PropTypes.string,
-        2: PropTypes.string,
-      }),
+      incorrect_answers: PropTypes.arrayOf(PropTypes.string),
       question: PropTypes.string,
     })
   ),
