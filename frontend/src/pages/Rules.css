@@ -1,0 +1,74 @@
+* {
+  margin: 0;
+  padding: 0;
+}
+
+.rule h1 {
+  font-size: 35px;
+  color: black;
+  line-height: 5.5px;
+}
+.rule h2 {
+  font-size: 30px;
+  margin-top: 50px;
+  color: brown;
+  font-weight: bold;
+  margin: 6vh;
+  padding-top: 45px;
+}
+.rules {
+  margin: 40px;
+  align-items: center;
+  text-align: center;
+  color: black;
+  line-height: 4.2vh;
+}
+span {
+  font-weight: bold;
+}
+.godzilla {
+  width: 60%;
+  padding: 35px;
+  font-size: 1.2rem;
+  text-align: justify;
+  margin: 0 auto;
+}
+.godzillas {
+  width: 60%;
+  padding: 15px;
+  font-size: 1.1rem;
+  text-align: justify;
+  margin: 0 auto;
+}
+.quizilla {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+}
+.langage {
+  font-style: italic;
+}
+.fun {
+  font-weight: bold;
+  text-align: center;
+  font-size: 36px;
+  font-family: "Dancing Script", cursive;
+}
+
+@media screen and (max-width: 768px) {
+  .rule h1 {
+    font-size: 1.8rem;
+  }
+  .rule h2 {
+    font-size: 1.6rem;
+  }
+  .godzilla {
+    width: 50%;
+    padding: 10px;
+  }
+  .fun {
+    font-size: 25px;
+    align-items: center;
+    color: brown;
+  }
+}

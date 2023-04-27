@@ -1,0 +1,111 @@
+.appHeader {
+  font-size: 1.5rem;
+  align-items: center;
+  padding-top: 20%;
+  left: 120px;
+  color: blue;
+  width: 75%;
+  margin-left: 50px;
+}
+
+.homeBody {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+}
+.welcomeText {
+  width: 80vw;
+  height: 70vh;
+  display: flex;
+  flex-direction: column;
+  justify-content: space-around;
+  align-items: center;
+  text-align: center;
+}
+.welcomeMessage {
+  font-size: 6rem;
+  font-weight: bold;
+  padding-top: 1rem;
+  padding-bottom: 1rem;
+}
+.welcomeComment {
+  font-size: 3rem;
+  line-height: 4rem;
+}
+.welcomeChoice {
+  font-size: 2rem;
+  padding-top: auto;
+  padding-bottom: 1rem;
+}
+.buttons {
+  width: 70%;
+  display: flex;
+  justify-content: space-around;
+}
+.button {
+  width: 12rem;
+  padding: 1rem;
+}
+
+@media screen and (max-width: 428px) {
+  .welcomeText {
+    height: 60vh;
+  }
+  .linkPhone {
+    display: none;
+  }
+  .navbarLink {
+    display: none;
+  }
+  .buttons {
+    height: 30vh;
+    flex-direction: column;
+    align-items: center;
+  }
+  .welcomeMessage {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+  }
+  .welcomeComment {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+    margin: 0 2rem;
+  }
+  .welcomeChoice {
+    font-size: 1.6rem;
+  }
+  .button {
+    width: 12rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+@media screen and (max-height: 428px) {
+  .linkPhone {
+    display: none;
+  }
+  .navbarLink {
+    display: none;
+  }
+  .welcomeText {
+    height: 60vh;
+  }
+  .welcomeMessage {
+    font-size: 2rem;
+    margin-top: 2rem;
+  }
+  .welcomeComment {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+  }
+  .welcomeChoice {
+    font-size: 1.25rem;
+  }
+
+  .buttons {
+    height: 30vh;
+  }
+}
