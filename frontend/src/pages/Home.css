@@ -16,10 +16,10 @@
 }
 .welcomeText {
   width: 80vw;
-  height: 50vh;
+  height: 70vh;
   display: flex;
   flex-direction: column;
-  justify-content: space-between;
+  justify-content: space-around;
   align-items: center;
   text-align: center;
 }
@@ -39,19 +39,62 @@
   padding-bottom: 1rem;
 }
 .buttons {
-  width: 60vw;
-  padding: 1rem;
+  width: 70%;
   display: flex;
   justify-content: space-around;
 }
+.button {
+  width: 12rem;
+  padding: 1rem;
+}
 
-@media screen and (max-width: 720px) {
+@media screen and (max-width: 428px) {
+  .welcomeText {
+    height: 60vh;
+  }
+  .linkPhone {
+    display: none;
+  }
+  .navbarLink {
+    display: none;
+  }
   .buttons {
-    height: 20vh;
+    height: 30vh;
     flex-direction: column;
+    align-items: center;
+  }
+  .welcomeMessage {
+    font-size: 2.4rem;
+    margin-top: 2rem;
+  }
+  .welcomeComment {
+    font-size: 1.5rem;
+    line-height: 2rem;
+    padding-bottom: 1rem;
+    margin: 0 2rem;
+  }
+  .welcomeChoice {
+    font-size: 1.6rem;
+  }
+  .button {
+    width: 12rem;
+    padding: 1rem;
+    margin: 1rem;
+  }
+}
+@media screen and (max-height: 428px) {
+  .linkPhone {
+    display: none;
+  }
+  .navbarLink {
+    display: none;
+  }
+  .welcomeText {
+    height: 60vh;
   }
   .welcomeMessage {
     font-size: 2rem;
+    margin-top: 2rem;
   }
   .welcomeComment {
     font-size: 1.5rem;
@@ -60,5 +103,8 @@
   }
   .welcomeChoice {
     font-size: 1.25rem;
+  }
+  .buttons {
+    height: 30vh;
   }
 }

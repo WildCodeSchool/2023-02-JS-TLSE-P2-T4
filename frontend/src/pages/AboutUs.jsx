@@ -25,25 +25,25 @@ function AboutUs() {
       <h2 className="title">Les Realisateurs</h2>
       <div className="author">
         <figure>
-          <img src="src/assets/cyrille.jpg" alt=" Cyrille" />
+          <img src="/assets/cyrille.jpg" alt=" Cyrille" />
           <figcaption>
             <p>Cyrille</p>
           </figcaption>
         </figure>
         <figure>
-          <img src="src/assets/ante.jpg" alt=" Ante" />
+          <img src="/assets/ante.jpg" alt=" Ante" />
           <figcaption>
             <p>Ante</p>
           </figcaption>
         </figure>
         <figure>
-          <img src="src/assets/alain.jpg" alt=" Alain" />
+          <img src="/assets/alain.jpg" alt=" Alain" />
           <figcaption>
             <p>Alain</p>
           </figcaption>
         </figure>
         <figure>
-          <img src="src/assets/junior.jpg" alt=" Junior" />
+          <img src="/assets/juju.jpg" alt=" Junior" />
           <figcaption>Junior</figcaption>
         </figure>
       </div>
