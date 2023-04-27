@@ -1,5 +1,6 @@
 import styled from "styled-components";
 import { useState } from "react";
+import PropTypes from "prop-types";
 import Square from "../components/Square";
 import SpinWheel from "../components/SpinWheel";
 import "./GameBoard.css";
@@ -39,7 +40,7 @@ const categories = [
   {
     name: "General Knowledge",
     option: "General Knowledge",
-    image: { uri: "./src/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
+    image: { uri: "./public/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
     style: {
       backgroundColor: "#b260ce",
     },
@@ -47,36 +48,36 @@ const categories = [
   {
     name: "Music",
     option: "Music",
-    image: { uri: "./src/assets/Music_Icon.svg", offsetY: 160 },
+    image: { uri: "./public/assets/Music_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ffa621" },
   },
   {
     name: "Video Games",
     option: "Video Games",
-    image: { uri: "./src/assets/VideoGames_Icon.svg", offsetY: 160 },
+    image: { uri: "./public/assets/VideoGames_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ff5858" },
   },
   {
     name: "Science & nature",
     option: "Science & nature",
-    image: { uri: "./src/assets/Science&Nature_Icon.svg", offsetY: 160 },
+    image: { uri: "./public/assets/Science&Nature_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#557aff" },
   },
   {
     name: "Geography",
     option: "Geography",
-    image: { uri: "./src/assets/Geography_Icon.svg", offsetY: 160 },
+    image: { uri: "./public/assets/Geography_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ffe663" },
   },
   {
     name: "History",
     option: "History",
-    image: { uri: "./src/assets/History_Icon.svg", offsetY: 160 },
+    image: { uri: "./public/assets/History_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#68e4ff" },
   },
 ];
 
-function GameBoard() {
+function GameBoard({ selectedTimer, selectedDifficulty }) {
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [showCat, setShowCat] = useState(false);
@@ -91,7 +92,6 @@ function GameBoard() {
       setShowModal(true);
     }
   };
-
   return (
     <div>
       <BoardGrid colMobile={3} rowMobile={7} colDesk={7} rowDesk={4}>
@@ -196,9 +196,21 @@ function GameBoard() {
         setShowCat={setShowCat}
         handleSpinClick={handleSpinClick}
         showModal={showModal}
+        selectedTimer={selectedTimer}
+        selectedDifficulty={selectedDifficulty}
       />
     </div>
   );
 }
+
+GameBoard.propTypes = {
+  selectedTimer: PropTypes.objectOf(PropTypes.number),
+  selectedDifficulty: PropTypes.objectOf(PropTypes.string),
+};
+
+GameBoard.defaultProps = {
+  selectedTimer: { valueT: 60 },
+  selectedDifficulty: { valueD: "Easy" },
+};
 
 export default GameBoard;

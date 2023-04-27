@@ -30,7 +30,7 @@ export default function loser() {
           ))}
         </ul>
       </section>
-      <section className="buttons">
+      <section className="newGame">
         <Link to="/gameboard">
           <button type="button"> New Game </button>
         </Link>

@@ -18,7 +18,7 @@ function Navbar() {
   return (
     <nav className="nav">
       <div className="appLogo">
-        <img src="src/assets/logo.png" alt="logo Quizilla" />
+        <img src="public/assets/logo.png" alt="logo Quizilla" />
       </div>
       <ul className={active}>
         <li className="nav__item">

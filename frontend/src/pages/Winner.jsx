@@ -16,7 +16,7 @@ const scoretotal = 6851;
 export default function winner() {
   return (
     <section className="winnerBody">
-      <section className="winnerText">
+      <section className="winnerBlockText">
         <p className="winnerMessage">Congratulation</p>
         <p className="winnerComment">You're about to be a real Zilla</p>
       </section>
@@ -28,7 +28,7 @@ export default function winner() {
           ))}
         </ul>
       </section>
-      <section className="buttons">
+      <section className="newGame">
         <Link to="/gameboard">
           <button type="button"> New Game </button>
         </Link>
