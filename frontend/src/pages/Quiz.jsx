@@ -40,16 +40,6 @@ function Quiz() {
     }
   }, [qWithoutIds]);
 
-  useEffect(() => {
-    const timeoutId = setTimeout(() => {
-      window.location.replace("/GameBoard");
-    }, 60000);
-
-    return () => {
-      clearTimeout(timeoutId);
-    };
-  }, []);
-
   return (
     <div className="quizContainer">
       <div className="quizHeader">
