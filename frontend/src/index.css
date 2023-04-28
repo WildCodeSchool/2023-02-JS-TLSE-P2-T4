@@ -42,7 +42,7 @@ body {
       var(--bg-black-transparent) 44.27%,
       rgba(0, 0, 0, 0) 100%
     ),
-    url(./assets/bg_img.JPG);
+    url(/assets/bg_img.JPG);
   background-size: cover;
   background-position: center;
   background-repeat: no-repeat;
