@@ -1,5 +1,5 @@
 import { useEffect, useState } from "react";
-import { useLocation } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
 import PropTypes from "prop-types";
 import axios from "axios";
 import Question from "../components/Question";
@@ -46,9 +46,11 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
     }
   }, [qWithoutIds]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      window.location.replace("/GameBoard");
+      navigate("/gameboard");
     }, 60000);
 
     return () => {
