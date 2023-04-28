@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import axios from "axios";
 import Question from "../components/Question";
 import Timer from "../components/Timer";
@@ -11,9 +12,8 @@ function Quiz() {
   // state pour incrémenter le score
   const [score, setScore] = useState(0);
   // state permettant de mettre à jour la question affichée de façon randomisée
-  const [currentQuest, setCurrentQuest] = useState(
-    Math.floor(Math.random() * 49)
-  );
+  const [currentQuest, setCurrentQuest] = useState();
+  // Math.floor(Math.random() * 49)
 
   // fetch des données
   useEffect(() => {
@@ -40,9 +40,11 @@ function Quiz() {
     }
   }, [qWithoutIds]);
 
+  const navigate = useNavigate();
+
   useEffect(() => {
     const timeoutId = setTimeout(() => {
-      window.location.replace("/GameBoard");
+      navigate("/gameboard");
     }, 60000);
 
     return () => {
