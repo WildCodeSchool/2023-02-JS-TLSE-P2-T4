@@ -38,7 +38,7 @@
   padding-top: auto;
   padding-bottom: 1rem;
 }
-.buttons {
+.buttonsStartSettings {
   width: 70%;
   display: flex;
   justify-content: space-around;
@@ -58,11 +58,6 @@
   .navbarLink {
     display: none;
   }
-  .buttons {
-    height: 30vh;
-    flex-direction: column;
-    align-items: center;
-  }
   .welcomeMessage {
     font-size: 2.4rem;
     margin-top: 2rem;
@@ -77,9 +72,11 @@
     font-size: 1.6rem;
   }
   .buttonsStartSettings {
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
     width: 12rem;
     padding: 1rem;
-    margin: 1rem;
   }
 }
 @media screen and (max-height: 428px) {

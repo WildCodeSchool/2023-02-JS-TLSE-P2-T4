@@ -36,10 +36,6 @@ function Home({
         />
       ) : (
         <section className="buttonsStartSettings">
-          <button type="button" onClick={() => setModalIsOpen(true)}>
-            Settings
-          </button>
-
           <Link to="/gameboard">
             <button
               type="button"
@@ -49,6 +45,9 @@ function Home({
               }}
             >
               Start
+            </button>
+            <button type="button" onClick={() => setModalIsOpen(true)}>
+              Settings
             </button>
           </Link>
         </section>

@@ -3,14 +3,14 @@ import "./GameBoard";
 import { Link } from "react-router-dom";
 
 const Labels = [
-  "GoatZilla 2000",
-  "LaZilla  3000",
-  "FuzZilla 4000",
-  "GlaZilla 5000",
-  "SmooZilla 6000",
-  "FizZilla 7000",
-  "CraZilla 8000",
-  "GodZilla 10000",
+  { id: 0, name: "GoatZilla", points: 2000 },
+  { id: 1, name: "LaZilla", points: 3000 },
+  { id: 2, name: "FuztZilla", points: 4000 },
+  { id: 3, name: "GlaZilla", points: 5000 },
+  { id: 4, name: "SmootZilla", points: 6000 },
+  { id: 5, name: "FizZilla", points: 7000 },
+  { id: 6, name: "CratZilla", points: 8000 },
+  { id: 7, name: "GodZilla", points: 10000 },
 ];
 const scoretotal = 6851;
 export default function loser() {
@@ -26,7 +26,7 @@ export default function loser() {
       <section className="resultBody">
         <ul className="resultUl">
           {Labels.map((label) => (
-            <li key="label">{`${label}`}</li>
+            <li key="label">{`${label.name} ${label.points}`}</li>
           ))}
         </ul>
       </section>
