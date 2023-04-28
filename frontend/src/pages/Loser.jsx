@@ -12,7 +12,7 @@ const Labels = [
   { id: 6, name: "CratZilla ", points: 1100 },
   { id: 7, name: "GodZilla  ", points: 1500 },
 ];
-const scoretotal = 1050;
+const scoretotal = 1000;
 export default function loser() {
   return (
     <section className="winnerBody">

@@ -44,7 +44,7 @@
   justify-content: space-around;
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 768px) {
   .welcomeText {
     height: 60vh;
   }
@@ -76,7 +76,7 @@
     padding: 1rem;
   }
 }
-@media screen and (max-height: 428px) {
+@media screen and (max-height: 768px) {
   .linkPhone {
     display: none;
   }
