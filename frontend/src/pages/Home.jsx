@@ -46,10 +46,10 @@ function Home({
             >
               Start
             </button>
-            <button type="button" onClick={() => setModalIsOpen(true)}>
-              Settings
-            </button>
           </Link>
+          <button type="button" onClick={() => setModalIsOpen(true)}>
+            Settings
+          </button>
         </section>
       )}
     </section>
