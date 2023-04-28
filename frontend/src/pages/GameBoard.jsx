@@ -7,7 +7,9 @@ import "./GameBoard.css";
 
 const BoardGrid = styled.div`
   display: grid;
-  gap: 8px;
+  width: 100%;
+  height: 100%;
+  gap: 12px;
   grid-template-columns: ${({ colMobile }) => `repeat(${colMobile}, 100px)`};
   grid-template-rows: ${({ rowMobile }) => `repeat(${rowMobile}, 100px)`};
   margin: 8% auto;
@@ -21,7 +23,16 @@ const BoardGrid = styled.div`
 `;
 
 const LaunchButton = styled.button`
+  position: fixed;
+  width: 100%;
+  bottom: 0;
+  background-color: black;
+  border-radius: 0px;
+  border: none;
+
   @media (min-width: 768px) {
+    position: initial;
+    border-radius: 50px;
     grid-area: 2/3/4/6;
     align-self: center;
     margin: 0 auto;
@@ -39,6 +50,7 @@ const LaunchButton = styled.button`
 const categories = [
   {
     name: "General Knowledge",
+    category: 10,
     option: "General Knowledge",
     image: { uri: "/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
     style: {
@@ -47,30 +59,35 @@ const categories = [
   },
   {
     name: "Music",
+    category: 12,
     option: "Music",
     image: { uri: "/assets/Music_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ffa621" },
   },
   {
     name: "Video Games",
+    category: 15,
     option: "Video Games",
     image: { uri: "/assets/VideoGames_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ff5858" },
   },
   {
     name: "Science & nature",
+    category: 17,
     option: "Science & nature",
     image: { uri: "/assets/Science&Nature_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#557aff" },
   },
   {
     name: "Geography",
+    category: 22,
     option: "Geography",
     image: { uri: "/assets/Geography_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ffe663" },
   },
   {
     name: "History",
+    category: 23,
     option: "History",
     image: { uri: "/assets/History_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#68e4ff" },

@@ -57,7 +57,15 @@ function App() {
           <Route path="/rules" element={<Rules />} />
           <Route path="/winner" element={<Winner />} />
           <Route path="/loser" element={<Loser />} />
-          <Route path="/gameboard/quiz" element={<Quiz />} />
+          <Route
+            path="/gameboard/quiz"
+            element={
+              <Quiz
+                selectedTimer={selectedTimer}
+                selectedDifficulty={selectedDifficulty}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>
