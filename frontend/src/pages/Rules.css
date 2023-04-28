@@ -3,66 +3,60 @@
   padding: 0;
 }
 
-.rule h1 {
+.rulesHead h1 {
   font-size: 35px;
-  color: black;
+  color: #fff;
   line-height: 5.5px;
 }
-.rule h2 {
+.rulesHead h2 {
   font-size: 30px;
   margin-top: 50px;
-  color: brown;
+  color: yellow;
   font-weight: bold;
-  margin: 6vh;
+  margin: 4vh;
   padding-top: 45px;
 }
-.rules {
+.rulesPage {
   margin: 40px;
   align-items: center;
   text-align: center;
-  color: black;
+  color: #fff;
   line-height: 4.2vh;
 }
 span {
   font-weight: bold;
 }
-.godzilla {
+.rulesExplication {
   width: 60%;
   padding: 35px;
   font-size: 1.2rem;
   text-align: justify;
   margin: 0 auto;
 }
-.godzillas {
-  width: 60%;
+.rulesParaph {
+  width: 100%;
   padding: 15px;
-  font-size: 1.1rem;
+  font-size: 1.2rem;
   text-align: justify;
   margin: 0 auto;
-}
-.quizilla {
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-}
-.langage {
-  font-style: italic;
 }
 .fun {
   font-weight: bold;
   text-align: center;
   font-size: 36px;
   font-family: "Dancing Script", cursive;
+  color: yellow;
 }
 
 @media screen and (max-width: 768px) {
-  .rule h1 {
+  .rulesHead h1 {
     font-size: 1.8rem;
+  
   }
-  .rule h2 {
+  .rulesHead h2 {
     font-size: 1.6rem;
   }
-  .godzilla {
+  .rulesExplication {
     width: 50%;
     padding: 10px;
   }
