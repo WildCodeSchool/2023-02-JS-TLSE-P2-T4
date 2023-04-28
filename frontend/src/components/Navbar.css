@@ -8,6 +8,7 @@
 .appLogo img {
   width: 90px;
   color: #fff;
+  cursor: pointer;
 }
 
 .navMenu {
@@ -52,7 +53,7 @@
     top: 8vh;
     right: 0;
     height: 26vh;
-    width: 24vw;
+    width: 29vw;
     flex-direction: column;
     transform: translateX(100%);
     transition: 0.8s ease-in;

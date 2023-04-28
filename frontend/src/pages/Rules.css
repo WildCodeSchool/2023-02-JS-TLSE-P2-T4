@@ -13,7 +13,7 @@
   margin-top: 50px;
   color: yellow;
   font-weight: bold;
-  margin: 6vh;
+  margin: 4vh;
   padding-top: 45px;
 }
 .rulesPage {
@@ -34,7 +34,7 @@ span {
   margin: 0 auto;
 }
 .rulesParaph {
-  width: 60%;
+  width: 100%;
   padding: 15px;
   font-size: 1.2rem;
   text-align: justify;
@@ -51,6 +51,7 @@ span {
 @media screen and (max-width: 768px) {
   .rulesHead h1 {
     font-size: 1.8rem;
+  
   }
   .rulesHead h2 {
     font-size: 1.6rem;

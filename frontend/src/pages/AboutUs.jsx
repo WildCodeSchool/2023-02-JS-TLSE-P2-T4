@@ -3,7 +3,7 @@ import "./AboutUs.css";
 function AboutUs() {
   return (
     <div className="aboutUs">
-      <div className="fizzilla">
+      <div className="aboutText">
         <h1 className="about">About Us</h1>
         <p className="source">The bibliographic source of our website:</p>
         <p>

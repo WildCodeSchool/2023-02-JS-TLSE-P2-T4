@@ -12,7 +12,6 @@
   font-size: 2.5rem;
   color: #fff;
   text-align: center;
-  text-decoration: underline;
 }
 figcaption {
   color: #fff;
@@ -50,15 +49,13 @@ figure img :hover {
   padding: 20vh;
   line-height: 5.2vh;
 }
-.fizzilla h1 {
+.about  {
   font-weight: bold;
   text-align: center;
   font-size: 3rem;
-  text-decoration: underline;
   padding: 35px;
 }
-.fizzilla span {
-  text-decoration: underline;
+.aboutText span {
   font-style: italic;
 }
 .source {
@@ -99,17 +96,21 @@ figure img :hover {
     font-size: 1.5rem;
     color: #fff;
     text-align: center;
-    text-decoration: underline;
   }
-  .fizzilla {
+  .aboutText {
     width: 350px;
   }
   .source {
     font-size: 1.4rem;
     align-items: center;
   }
-  .fizzilla p {
-    font-size: 1.3rem;
+  .aboutText p {
+    font-size: 1.4rem;
     text-align: center;
+  }
+  .about
+  {
+    text-align: center;
+    font-size: 2rem;
   }
 }
