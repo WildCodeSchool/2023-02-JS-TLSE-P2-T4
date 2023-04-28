@@ -20,7 +20,7 @@ function Navbar() {
       <div className="appLogo">
         <img src="/assets/logo.png" alt="logo Quizilla" />
       </div>
-      <ul className={active}>
+      <ul className={active} onClick={navToggle} aria-hidden>
         <li className="navitem">
           <Link to="/">Home</Link>
         </li>

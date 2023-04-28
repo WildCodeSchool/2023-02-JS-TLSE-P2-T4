@@ -5,24 +5,22 @@ function AboutUs() {
     <div className="aboutUs">
       <div className="fizzilla">
         <h1 className="about">About Us</h1>
-        <p className="source">
-          La source bibliographique de notre site Internet :
+        <p className="source">The bibliographic source of our website:</p>
+        <p>
+          <span>The title of the website: </span>QUIZILLA
         </p>
         <p>
-          <span>Le titre du site Internet: </span>QUIZILLA
+          <span>The year of its publication: </span>2023
         </p>
         <p>
-          <span>L’annee de sa publication: </span>2023
+          <span>The URL address:</span> https://quizilla.netlify.app/
         </p>
         <p>
-          <span>L’adresse URL:</span> https://quizilla.netlify.app/
-        </p>
-        <p>
-          <span>L'Application programming interface API utilisee:</span> API
+          <span>The Application Programming Interface (API) used.:</span>open
           Trivia
         </p>
       </div>
-      <h2 className="title">Les Realisateurs</h2>
+      <h2 className="title">The developers of the project</h2>
       <div className="author">
         <figure>
           <img src="/assets/cyrille.jpg" alt=" Cyrille" />
@@ -43,7 +41,7 @@ function AboutUs() {
           </figcaption>
         </figure>
         <figure>
-          <img src="/assets/juju.jpg" alt=" Junior" />
+          <img src="/assets/junior.jpg" alt=" Junior" />
           <figcaption>Junior</figcaption>
         </figure>
       </div>

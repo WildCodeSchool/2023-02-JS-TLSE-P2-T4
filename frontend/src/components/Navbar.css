@@ -7,7 +7,6 @@
 }
 .appLogo img {
   width: 90px;
-  cursor: pointer;
   color: #fff;
 }
 
@@ -40,7 +39,7 @@
   .navtoggler:focus {
     outline: none;
   }
-
+  
   .appLogo img {
     display: block;
     width: 74px;
@@ -53,21 +52,23 @@
     top: 8vh;
     right: 0;
     height: 26vh;
-    width: 35vw;
+    width: 24vw;
     flex-direction: column;
     transform: translateX(100%);
     transition: 0.8s ease-in;
-    background: #000000;
+    background:var(--bg-black-transparent);
     z-index: 2;
-    padding: 8px;
+    padding: 28px;
+    border-radius: 14px;
   }
-}
-/* Active Class /
-.nav__active {
-  transform: translateX(0%);
+  
 }
 
-/ Toggle Icon Animation */
+.navactive {
+  transform: translateX(0%);
+} 
+
+/* Toggle Icon Animation */
 
 .toggle .line1 {
   transform: rotate(-45deg) translate(-8px, 5px);
