@@ -20,7 +20,6 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
   const [currentQuest, setCurrentQuest] = useState(
     Math.floor(Math.random() * 49)
   );
-
   // fetch des données
   useEffect(() => {
     axios
