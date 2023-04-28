@@ -9,8 +9,9 @@ function Question({
   setScore,
   score,
 }) {
+  const [questionTitle, setQuestionTitle] = useState("");
   //   state de modification des réponses
-  const [options, setOptions] = useState();
+  const [options, setOptions] = useState([]);
   //   state de modification des classes des réponses
   const [wrongAnswerClass, setWrongAnswerClass] = useState("");
   const [rightAnswerClass, setRightAnswerClass] = useState("");
@@ -22,19 +23,6 @@ function Question({
     return arr.sort(() => Math.random() - 0.5);
   };
 
-  // useffect permettant de mélanger les réponses afin qu'elles ne soient pas toujours dans le même ordre.
-  useEffect(() => {
-    if (questions) {
-      setOptions(
-        handleShuffle([
-          questions[currentQuest].correct_answer,
-          ...questions[currentQuest].incorrect_answers,
-        ])
-      );
-      setClicked(false);
-    }
-  }, [currentQuest]);
-
   //   fonction permettant d'afficher la bonne et les mauvaises réponses après un clic sur l'une d'entre elles.
   const handleClickClasses = (opt) => {
     if (opt === questions[currentQuest].correct_answer) {
@@ -45,6 +33,20 @@ function Question({
       setRightAnswerClass("correct");
     }
   };
+
+  // useffect permettant de mélanger les réponses afin qu'elles ne soient pas toujours dans le même ordre.
+  useEffect(() => {
+    if (questions) {
+      setQuestionTitle(questions[currentQuest].question);
+      setOptions(
+        handleShuffle([
+          questions[currentQuest].correct_answer,
+          ...questions[currentQuest].incorrect_answers,
+        ])
+      );
+      setClicked(false);
+    }
+  }, [currentQuest]);
 
   //   fonction permettant d'afficher la question suivante de façon aléatoire dans un délai après le clic.
   const handleClickNext = () => {
@@ -59,9 +61,7 @@ function Question({
   // ------------------------return du composant---------------------------
   return (
     <div>
-      <div>
-        <h1 className="question">{questions[currentQuest].question}</h1>
-      </div>
+      <div>{questions && <h1 className="question">{questionTitle}</h1>}</div>
       <div className="answers">
         {options
           ? options.map((opt) => {

@@ -33,6 +33,7 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
       });
   }, []);
 
+  // fonction permettant d'ajouter un ID unique à chaque objet.
   function addUniqueIds(array) {
     const newArray = array.map((item, index) => ({
       ...item,
@@ -40,12 +41,14 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
     }));
     setQuestions(newArray);
   }
+
   useEffect(() => {
     if (qWithoutIds) {
       addUniqueIds(qWithoutIds);
     }
   }, [qWithoutIds]);
 
+  // hook pour naviguer automatiquement vers le board après un délai de 60s
   const navigate = useNavigate();
 
   useEffect(() => {
