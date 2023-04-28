@@ -17,8 +17,9 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
   // state pour incrémenter le score
   const [score, setScore] = useState(0);
   // state permettant de mettre à jour la question affichée de façon randomisée
-  const [currentQuest, setCurrentQuest] = useState();
-  // Math.floor(Math.random() * 49)
+  const [currentQuest, setCurrentQuest] = useState(
+    Math.floor(Math.random() * 49)
+  );
 
   // fetch des données
   useEffect(() => {
@@ -32,6 +33,7 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
       });
   }, []);
 
+  // fonction permettant d'ajouter un ID unique à chaque objet.
   function addUniqueIds(array) {
     const newArray = array.map((item, index) => ({
       ...item,
@@ -39,12 +41,14 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
     }));
     setQuestions(newArray);
   }
+
   useEffect(() => {
     if (qWithoutIds) {
       addUniqueIds(qWithoutIds);
     }
   }, [qWithoutIds]);
 
+  // hook pour naviguer automatiquement vers le board après un délai de 60s
   const navigate = useNavigate();
 
   useEffect(() => {
