@@ -1,11 +1,16 @@
 import { useEffect, useState } from "react";
-import { useNavigate } from "react-router-dom";
+import { useNavigate, useLocation } from "react-router-dom";
+import PropTypes from "prop-types";
 import axios from "axios";
 import Question from "../components/Question";
 import Timer from "../components/Timer";
 import "./Quiz.css";
 
-function Quiz() {
+function Quiz({ selectedTimer, selectedDifficulty }) {
+  const { state } = useLocation();
+  const { category } = state;
+  const { valueD } = selectedDifficulty;
+  const { valueT } = selectedTimer;
   // state permettant de stocker l'ensemble des questions fetch pour 1 quiz
   const [questions, setQuestions] = useState();
   const [qWithoutIds, setQWithoutIds] = useState();
@@ -19,7 +24,7 @@ function Quiz() {
   useEffect(() => {
     axios
       .get(
-        "https://opentdb.com/api.php?amount=50&category=9&difficulty=medium&type=multiple"
+        `https://opentdb.com/api.php?amount=50&category=${category}&difficulty=${valueD}&type=multiple`
       )
       .then((res) => setQWithoutIds(res.data.results))
       .catch((err) => {
@@ -61,10 +66,10 @@ function Quiz() {
         <div className="timer">
           <img
             className="timeIcon"
-            src="frontend\src\assets\Timer_Icon.svg"
+            src="\assets\Timer_Icon.svg"
             alt="time icon"
           />
-          <Timer />
+          <Timer valueT={valueT} />
         </div>
       </div>
 
@@ -83,5 +88,15 @@ function Quiz() {
     </div>
   );
 }
+
+Quiz.propTypes = {
+  selectedTimer: PropTypes.objectOf(PropTypes.number),
+  selectedDifficulty: PropTypes.objectOf(PropTypes.string),
+};
+
+Quiz.defaultProps = {
+  selectedTimer: { valueT: 60 },
+  selectedDifficulty: { valueD: "Easy" },
+};
 
 export default Quiz;

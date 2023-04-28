@@ -50,6 +50,7 @@ const LaunchButton = styled.button`
 const categories = [
   {
     name: "General Knowledge",
+    category: 10,
     option: "General Knowledge",
     image: { uri: "/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
     style: {
@@ -58,30 +59,35 @@ const categories = [
   },
   {
     name: "Music",
+    category: 12,
     option: "Music",
     image: { uri: "/assets/Music_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ffa621" },
   },
   {
     name: "Video Games",
+    category: 15,
     option: "Video Games",
     image: { uri: "/assets/VideoGames_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ff5858" },
   },
   {
     name: "Science & nature",
+    category: 17,
     option: "Science & nature",
     image: { uri: "/assets/Science&Nature_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#557aff" },
   },
   {
     name: "Geography",
+    category: 22,
     option: "Geography",
     image: { uri: "/assets/Geography_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#ffe663" },
   },
   {
     name: "History",
+    category: 23,
     option: "History",
     image: { uri: "/assets/History_Icon.svg", offsetY: 160 },
     style: { backgroundColor: "#68e4ff" },
