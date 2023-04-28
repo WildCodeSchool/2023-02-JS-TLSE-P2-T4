@@ -3,20 +3,20 @@ import "./GameBoard";
 import { Link } from "react-router-dom";
 
 const Labels = [
-  { id: 0, name: "GoatZilla", points: 2000 },
-  { id: 1, name: "LaZilla", points: 3000 },
-  { id: 2, name: "FuztZilla", points: 4000 },
-  { id: 3, name: "GlaZilla", points: 5000 },
-  { id: 4, name: "SmootZilla", points: 6000 },
-  { id: 5, name: "FizZilla", points: 7000 },
-  { id: 6, name: "CratZilla", points: 8000 },
-  { id: 7, name: "GodZilla", points: 10000 },
+  { id: 0, name: "GoatZilla ", points: 750 },
+  { id: 1, name: "LaZilla", points: 800 },
+  { id: 2, name: "FuztZilla ", points: 850 },
+  { id: 3, name: "GlaZilla  ", points: 900 },
+  { id: 4, name: "SmootZilla", points: 950 },
+  { id: 5, name: "FizZilla  ", points: 1000 },
+  { id: 6, name: "CratZilla ", points: 1100 },
+  { id: 7, name: "GodZilla  ", points: 1500 },
 ];
-const scoretotal = 6851;
+const scoretotal = 1050;
 export default function loser() {
   return (
     <section className="winnerBody">
-      <section className="winnerText">
+      <section className="winnerBlockText">
         <p className="winnerMessage">NOOb !!</p>
         <p className="winnerComment">
           Whatever your name, you will always be a NoobZilla
@@ -26,7 +26,12 @@ export default function loser() {
       <section className="resultBody">
         <ul className="resultUl">
           {Labels.map((label) => (
-            <li key="label">{`${label.name} ${label.points}`}</li>
+            <li
+              key={label.id}
+              className={
+                label.points >= scoretotal ? "normalLabel" : "highScoreLabel"
+              }
+            >{`${label.name} ${label.points}`}</li>
           ))}
         </ul>
       </section>

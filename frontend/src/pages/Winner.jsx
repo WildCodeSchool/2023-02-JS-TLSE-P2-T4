@@ -12,7 +12,7 @@ const Labels = [
   { id: 6, name: "CratZilla ", points: 1100 },
   { id: 7, name: "GodZilla  ", points: 1500 },
 ];
-const scoretotal = 6851;
+const scoretotal = 900;
 export default function winner() {
   return (
     <section className="winnerBody">
@@ -24,7 +24,12 @@ export default function winner() {
       <section className="resultBody">
         <ul className="resultUl">
           {Labels.map((label) => (
-            <li key="label">{`${label.name} ${label.points}`}</li>
+            <li
+              key={label.id}
+              className={
+                label.points >= scoretotal ? "normalLabel" : "highScoreLabel"
+              }
+            >{`${label.name} ${label.points}`}</li>
           ))}
         </ul>
       </section>
