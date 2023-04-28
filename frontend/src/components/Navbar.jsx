@@ -3,17 +3,17 @@ import { Link } from "react-router-dom";
 import "./Navbar.css";
 
 function Navbar() {
-  const [active, setActive] = useState("navmenu");
-  const [icon, setIcon] = useState("navtoggler");
+  const [active, setActive] = useState("navMenu");
+  const [icon, setIcon] = useState("navToggler");
   const navToggle = () => {
-    if (active === "navmenu") {
-      setActive("navmenu navactive");
-    } else setActive("navmenu");
+    if (active === "navMenu") {
+      setActive("navMenu navActive");
+    } else setActive("navMenu");
 
     // Icon Toggler
-    if (icon === "navtoggler") {
-      setIcon("navtoggler toggle");
-    } else setIcon("navtoggler");
+    if (icon === "navToggler") {
+      setIcon("navToggler toggle");
+    } else setIcon("navToggler");
   };
   return (
     <nav className="nav">
@@ -21,13 +21,13 @@ function Navbar() {
         <img src="/assets/logo.png" alt="logo Quizilla" />
       </div>
       <ul className={active} onClick={navToggle} aria-hidden>
-        <li className="navitem">
+        <li className="navItem">
           <Link to="/">Home</Link>
         </li>
-        <li className="navitem">
+        <li className="navItem">
           <Link to="/rules">Rules</Link>
         </li>
-        <li className="navitem">
+        <li className="navItem">
           <Link to="/about-us">About Us</Link>
         </li>
       </ul>

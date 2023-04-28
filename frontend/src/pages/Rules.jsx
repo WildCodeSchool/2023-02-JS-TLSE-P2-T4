@@ -2,13 +2,13 @@ import "./Rules.css";
 
 function Rules() {
   return (
-    <div className="rules">
-      <div className="rule">
+    <div className="rulesPage">
+      <div className="rulesHead">
         <h1>The rules of your quizilla game </h1>
         <h2>Quiz game rules</h2>
       </div>
-      <div className="quizilla">
-        <p className="godzillas">
+      <div className="rulesExplication">
+        <p className="rulesParaph">
           <span>Number of Players: </span> 1 <br />
           <span>Player Objective:</span>
           Navigate the game board by correctly answering quiz questions to reach

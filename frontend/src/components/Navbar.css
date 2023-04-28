@@ -10,16 +10,16 @@
   color: #fff;
 }
 
-.navmenu {
+.navMenu {
   display: flex;
   align-items: center;
   justify-content: space-between;
   gap: 2rem;
 }
-.navtoggler {
+.navToggler {
   display: none;
 }
-.navtoggler div {
+.navToggler div {
   width: 2.5rem;
   height: 0.2rem;
   margin: 0.4rem;
@@ -28,7 +28,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .navtoggler {
+  .navToggler {
     display: block;
     cursor: pointer;
     background: transparent;
@@ -36,7 +36,7 @@
     padding: 0;
   }
 
-  .navtoggler:focus {
+  .navToggler:focus {
     outline: none;
   }
   
@@ -47,7 +47,7 @@
     transition: transform 0.5s ease;
   }
 
-  .navmenu {
+  .navMenu {
     position: fixed;
     top: 8vh;
     right: 0;
@@ -64,7 +64,7 @@
   
 }
 
-.navactive {
+.navActive {
   transform: translateX(0%);
 } 
 
@@ -79,14 +79,14 @@
 .toggle .line3 {
   transform: rotate(45deg) translate(-8px, -5px);
 }
-.navitem {
+.navItem {
   color: white;
   border: 1px solid transparent;
   border-radius: 3px;
   text-decoration: none;
   padding: 4px 8px;
 }
-.navitem:hover {
+.navItem:hover {
   transition: 0.5s;
   color: yellow;
   border: 1px solid white;
