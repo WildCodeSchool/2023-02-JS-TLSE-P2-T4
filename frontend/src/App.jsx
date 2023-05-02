@@ -7,6 +7,7 @@ import Home from "./pages/Home";
 import AboutUs from "./pages/AboutUs";
 import Rules from "./pages/Rules";
 import Navbar from "./components/Navbar";
+// eslint-disable-next-line import/no-extraneous-dependencies
 import "primereact/resources/primereact.min.css";
 import Winner from "./pages/Winner";
 import Loser from "./pages/Loser";
@@ -19,13 +20,15 @@ function App() {
     { valueT: 120 },
   ];
   const difficulty = [
-    { valueD: "Easy" },
-    { valueD: "Medium" },
-    { valueD: "Hard" },
-    { valueD: "Combined" },
+    { valueD: "easy" },
+    { valueD: "medium" },
+    { valueD: "hard" },
+    { valueD: "combined" },
   ];
-  const [selectedTimer, setSelectedTimer] = useState(null);
-  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+  const [selectedTimer, setSelectedTimer] = useState({ valueT: 45 });
+  const [selectedDifficulty, setSelectedDifficulty] = useState({
+    valueD: "easy",
+  });
   return (
     <Router>
       <div className="app">
@@ -57,7 +60,15 @@ function App() {
           <Route path="/rules" element={<Rules />} />
           <Route path="/winner" element={<Winner />} />
           <Route path="/loser" element={<Loser />} />
-          <Route path="/gameboard/quiz" element={<Quiz />} />
+          <Route
+            path="/gameboard/quiz"
+            element={
+              <Quiz
+                selectedTimer={selectedTimer}
+                selectedDifficulty={selectedDifficulty}
+              />
+            }
+          />
         </Routes>
       </div>
     </Router>

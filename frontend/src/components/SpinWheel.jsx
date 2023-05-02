@@ -17,6 +17,7 @@ function SpinWheel({
     categories: PropTypes.arrayOf(
       PropTypes.shape({
         name: PropTypes.string.isRequired,
+        category: PropTypes.number.isRequired,
         option: PropTypes.string.isRequired,
         image: PropTypes.shape({
           offsetY: PropTypes.number.isRequired,
@@ -44,7 +45,7 @@ function SpinWheel({
     showModal: false,
   };
 
-  const { image, name } = categories[prizeNumber];
+  const { image, name, category } = categories[prizeNumber];
 
   return (
     <div className={showModal ? "modalSpinWheel" : "notModalSpinWheel"}>
@@ -59,14 +60,16 @@ function SpinWheel({
         spinDuration={0.6}
       />
       {showCat && (
-        <div className="showSelectedCat">
-          <img src={image.uri} alt={name} />
-          <p>{name}</p>
-        </div>
+        <>
+          <div className="showSelectedCat">
+            <img src={image.uri} alt={name} />
+            <p>{name}</p>
+          </div>
+          <Link to="quiz" state={{ category }}>
+            <button type="button">Start Quiz</button>
+          </Link>
+        </>
       )}
-      <Link to="quiz">
-        <button type="button">Start Quiz</button>
-      </Link>
     </div>
   );
 }
