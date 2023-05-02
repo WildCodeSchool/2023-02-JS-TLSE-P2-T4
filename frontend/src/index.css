@@ -28,7 +28,8 @@
 
 a {
   font-weight: 500;
-  font-size: 1.4rem;
+  font-size: 1.5rem;
+  letter-spacing: 0.1rem;
   color: var(--default-light-color);
   text-decoration: inherit;
 }
