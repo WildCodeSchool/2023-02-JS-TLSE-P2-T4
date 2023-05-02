@@ -49,17 +49,6 @@
   line-height: 2.4rem;
   margin: 1rem 0 1rem 0;
 }
-.normalLabel{
-  background-color: var(--hight-score-label);
-  color: var(--default-light-color);
-
-}
-
-.highScoreLabel{
-  background-color: var(--default-light-color);
-  color:  black;
-}
-
 .newGame {
   width: 100%;
   display: flex;
@@ -96,8 +85,6 @@
     width: 120vh;
   }
   .resultUl {
-    height: 90%;
-    width: 120%;
-    
+    height: 100%;
   }
 }

@@ -1,6 +1,5 @@
 import "./Winner.css";
 import "./GameBoard";
-import { Link } from "react-router-dom";
 
 const Labels = [
   { id: 0, name: "GoatZilla ", points: 750 },
@@ -13,6 +12,9 @@ const Labels = [
   { id: 7, name: "GodZilla  ", points: 1500 },
 ];
 const scoretotal = 1000;
+const RedirectHome = () => {
+  window.location.replace("/");
+};
 export default function loser() {
   return (
     <section className="winnerBody">
@@ -36,9 +38,9 @@ export default function loser() {
         </ul>
       </section>
       <section className="newGame">
-        <Link to="/gameboard">
-          <button type="button"> New Game </button>
-        </Link>
+        <button type="button" onClick={RedirectHome}>
+          New Game
+        </button>
       </section>
     </section>
   );
