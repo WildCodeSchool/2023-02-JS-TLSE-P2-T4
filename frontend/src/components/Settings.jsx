@@ -37,7 +37,9 @@ function Settings({
         <div className="dropdown">
           <Dropdown
             value={selectedDifficulty}
-            onChange={(e) => setSelectedDifficulty(e.value)}
+            onChange={(e) => {
+              setSelectedDifficulty(e.value);
+            }}
             options={difficulty}
             optionLabel="valueD"
             placeholder="Select a difficulty ..."

@@ -20,13 +20,15 @@ function App() {
     { valueT: 120 },
   ];
   const difficulty = [
-    { valueD: "Easy" },
-    { valueD: "Medium" },
-    { valueD: "Hard" },
-    { valueD: "Combined" },
+    { valueD: "easy" },
+    { valueD: "medium" },
+    { valueD: "hard" },
+    { valueD: "combined" },
   ];
-  const [selectedTimer, setSelectedTimer] = useState(null);
-  const [selectedDifficulty, setSelectedDifficulty] = useState(null);
+  const [selectedTimer, setSelectedTimer] = useState({ valueT: 45 });
+  const [selectedDifficulty, setSelectedDifficulty] = useState({
+    valueD: "easy",
+  });
   return (
     <Router>
       <div className="app">
