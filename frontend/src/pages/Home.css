@@ -39,12 +39,8 @@
 .button {
   width: 240px;
 }
-button:hover {
-  border-color: var(--secondary-color);
-  color: var(--secondary-color);
-}
-
-button:focus {
+.button:hover,
+.button:focus {
   border-color: var(--secondary-color);
   color: var(--secondary-color);
 }
