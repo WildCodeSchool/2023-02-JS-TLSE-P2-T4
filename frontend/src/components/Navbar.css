@@ -40,7 +40,7 @@
   .navToggler:focus {
     outline: none;
   }
-  
+
   .appLogo img {
     display: block;
     width: 74px;
@@ -57,17 +57,16 @@
     flex-direction: column;
     transform: translateX(100%);
     transition: 0.8s ease-in;
-    background:var(--bg-black-transparent);
+    background: var(--bg-black-transparent);
     z-index: 2;
     padding: 28px;
     border-radius: 14px;
   }
-  
 }
 
 .navActive {
   transform: translateX(0%);
-} 
+}
 
 /* Toggle Icon Animation */
 

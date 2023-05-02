@@ -49,7 +49,7 @@ figure img :hover {
   padding: 20vh;
   line-height: 5.2vh;
 }
-.about  {
+.about {
   font-weight: bold;
   text-align: center;
   font-size: 3rem;
@@ -108,8 +108,7 @@ figure img :hover {
     font-size: 1.4rem;
     text-align: center;
   }
-  .about
-  {
+  .about {
     text-align: center;
     font-size: 2rem;
   }

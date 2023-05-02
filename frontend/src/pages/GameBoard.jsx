@@ -50,7 +50,7 @@ const LaunchButton = styled.button`
 const categories = [
   {
     name: "General Knowledge",
-    category: 10,
+    category: 9,
     option: "General Knowledge",
     image: { uri: "/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
     style: {
