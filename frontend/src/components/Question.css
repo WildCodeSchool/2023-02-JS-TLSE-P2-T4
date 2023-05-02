@@ -10,6 +10,8 @@
   flex-direction: column;
   justify-content: center;
   gap: 12px;
+  width: 90%;
+  margin: 0 auto;
 }
 
 .singleAnswer {
@@ -18,6 +20,7 @@
   background-color: rgba(0, 0, 0, 0.6);
   font-size: 1.4em;
   font-family: poppins, sans-serif;
+  font-weight: 400;
   padding: 16px 32px;
   margin: 0 24px;
   white-space: pre-wrap;
@@ -39,4 +42,38 @@
 .incorrect {
   border: 2px solid orangered;
   color: orangered;
+}
+
+@media screen and (min-width: 768px) {
+  .questionContent {
+    display: flex;
+    flex-direction: column;
+    gap: 4.8em;
+  }
+
+  .question {
+    text-align: center;
+    font-size: 2.8em;
+    margin: 0 200px;
+    line-height: 1.4em;
+  }
+
+  .answers {
+    display: flex;
+    flex-direction: row;
+    flex-wrap: wrap;
+    justify-content: center;
+    gap: 16px;
+    width: 70%;
+    margin: 0 auto;
+  }
+  .singleAnswer {
+    border-radius: 10px;
+    font-size: 2rem;
+    padding: 24px 32px;
+    margin: 0;
+    width: 40%;
+    white-space: pre-wrap;
+    cursor: pointer;
+  }
 }

@@ -75,7 +75,7 @@ function Question({
 
   // ------------------------return du composant---------------------------
   return (
-    <div>
+    <div className="questionContent">
       <div>
         <h1 className="question">{questionTitle}</h1>
       </div>
