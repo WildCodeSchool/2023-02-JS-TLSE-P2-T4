@@ -29,6 +29,7 @@ const LaunchButton = styled.button`
   background-color: black;
   border-radius: 0px;
   border: none;
+  border: 3px solid rgba(255, 255, 255, 0.2);
 
   @media (min-width: 768px) {
     position: initial;
