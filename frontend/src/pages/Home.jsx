@@ -39,13 +39,12 @@ function Home({
       ) : (
         <section className="buttons">
           <button
-            className="button settings"
             type="button"
+            className="button settings"
             onClick={() => setModalIsOpen(true)}
           >
             Settings
           </button>
-
           <Link to="/gameboard">
             <button
               className="button start"
