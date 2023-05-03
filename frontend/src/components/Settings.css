@@ -4,57 +4,87 @@
   align-items: center;
   justify-content: space-between;
   width: 100%;
-  height: 120%;
-  border: red solid 1px;
+  height: 100%;
   background-color: rgba(0, 0, 0, 0.7);
+  backdrop-filter: blur(6px);
 }
 .modalSettings {
   display: flex;
   flex-direction: column;
   align-items: center;
-  top: 70%;
+  top: 50%;
   left: 50%;
   transform: translate(-50%, -50%);
   position: absolute;
   width: 50%;
   min-width: 256px;
   height: 35%;
-  background-color: rgba(0, 0, 0, 0.9);
-  border: purple solid 1px;
+  background-color: rgba(255, 255, 255, 0.1);
+  border: 3px solid rgba(255, 255, 255, 0.1);
   padding: 40px 24px;
   gap: 20%;
   border-radius: 10px;
   z-index: 99;
 }
 .dropdown {
-  width: 100%;
+  width: 90%;
 }
 .selectDropdown {
   width: 100%;
-  height: 2rem;
   border-radius: 5px;
-  padding: 5px 16px;
-  border: 1px solid grey;
+  border: 2px solid white;
+}
+
+.p-dropdown-items-wrapper {
+  height: auto;
 }
 .p-dropdown {
-  gap: 10px;
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 0.8);
   color: rgb(0, 0, 0);
+  font-size: 1.4rem;
+  font-family: inder, sans-serif;
+  padding: 12px;
 }
 .p-dropdown-item {
-  background-color: rgba(255, 255, 255, 0.9);
+  background-color: rgba(255, 255, 255, 1);
   color: rgb(0, 0, 0);
+  border-top: 1px solid rgb(0, 0, 0);
   display: flex;
-  justify-content: center;
+  justify-content: left;
   border-radius: 5px;
-  border: 1px solid rgba(0, 0, 0, 0.9);
-  padding: 5px;
+  padding: 8px;
+  font-size: 1.4rem;
+  font-family: inder, sans-serif;
 }
+.p-dropdown-item:hover {
+  background-color: rgb(0, 0, 0);
+  color: var(--default-light-color);
+}
+
 .linkStart {
   display: flex;
   width: 12rem;
-  border-radius: 50px;
 }
 .button-settings {
   border: 2px solid rgba(255, 255, 255, 0.9);
+  background-color: rgba(0, 0, 0, 0.4);
+  margin-bottom: 32px;
+}
+
+@media screen and (min-width: 768px) {
+  .blurSettings {
+    backdrop-filter: blur(10px);
+  }
+  .p-dropdown {
+    font-size: 1.6rem;
+    padding: 16px;
+  }
+  .p-dropdown-item {
+    padding: 16px;
+    font-size: 1.6rem;
+  }
+  .modalSettings {
+    height: 45%;
+    width: 40%;
+  }
 }
