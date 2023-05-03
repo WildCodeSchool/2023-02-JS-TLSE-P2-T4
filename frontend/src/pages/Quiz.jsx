@@ -77,7 +77,9 @@ function Quiz({
       <div className="quizContainer">
         <div className="quizHeader">
           <div className="score">
-            <p>Score : {currentScore}</p>
+            <p>
+              Score : <span className="scoreNumb">{currentScore}</span>
+            </p>
           </div>
           <div className="timer">
             <img

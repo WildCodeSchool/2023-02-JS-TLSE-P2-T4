@@ -22,3 +22,9 @@
   gap: 24px;
   font-size: 32px;
 }
+
+.modalSpinWheel button:hover,
+.modalSpinWheel button:focus {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}

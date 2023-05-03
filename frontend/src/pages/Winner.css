@@ -4,7 +4,7 @@
   flex-direction: column;
   align-items: center;
 }
-.winnerText {
+.winnerBlockText {
   height: 40vh;
   display: flex;
   flex-direction: column;
@@ -44,9 +44,7 @@
   width: 14rem;
   height: 2.4rem;
   border-radius: 3rem;
-  background-color: var(--default-light-color);
   font-size: 1.5rem;
-  color: black;
   text-align: center;
   line-height: 2.4rem;
   margin: 1rem 0 1rem 0;
@@ -57,9 +55,9 @@
   justify-content: center;
 }
 
-@media screen and (max-width: 428px) {
+@media screen and (max-width: 768px) {
   .winnerMessage {
-    font-size: 3rem;
+    font-size: 1.8rem;
   }
   .winnerComment {
     font-size: 1.6rem;
@@ -69,11 +67,12 @@
   }
   .resultUl {
     height: 100%;
+    width: 100%;
   }
 }
-@media screen and (max-height: 428px) {
+@media screen and (max-height: 768px) {
   .winnerMessage {
-    font-size: 2rem;
+    font-size: 1.8rem;
   }
   .winnerComment {
     font-size: 1.8rem;
@@ -82,7 +81,7 @@
     font-size: 1.8em;
   }
   .resultBody {
-    height: 80vh;
+    height: 85vh;
     width: 120vh;
   }
   .resultUl {

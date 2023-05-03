@@ -1,22 +1,15 @@
 import "./Winner.css";
 import "./GameBoard";
-import { Link } from "react-router-dom";
+import { LabelsL } from "../components/Utils";
 
-const Labels = [
-  "GoatZilla 2000",
-  "LaZilla  3000",
-  "FuzZilla 4000",
-  "GlaZilla 5000",
-  "SmooZilla 6000",
-  "FizZilla 7000",
-  "CraZilla 8000",
-  "GodZilla 10000",
-];
-const scoretotal = 6851;
-export default function loser() {
+const scoretotal = 1000;
+const RedirectHome = () => {
+  window.location.replace("/");
+};
+function Loser() {
   return (
     <section className="winnerBody">
-      <section className="winnerText">
+      <section className="winnerBlockText">
         <p className="winnerMessage">NOOb !!</p>
         <p className="winnerComment">
           Whatever your name, you will always be a NoobZilla
@@ -25,15 +18,23 @@ export default function loser() {
       <div className="labelScore">{`Score total : ${scoretotal}`}</div>
       <section className="resultBody">
         <ul className="resultUl">
-          {Labels.map((label) => (
-            <li key="label">{`${label}`}</li>
+          {LabelsL.map((label) => (
+            <li
+              key={label.id}
+              className={
+                label.points >= scoretotal ? "normalLabel" : "highScoreLabel"
+              }
+            >{`${label.name} ${label.points}`}</li>
           ))}
         </ul>
       </section>
-      <section className="buttons">
-        <button type="button"> New Game </button>
-        <Link to="/gameboard" />
+      <section className="newGame">
+        <button type="button" onClick={RedirectHome}>
+          New Game
+        </button>
       </section>
     </section>
   );
 }
+
+export default Loser;
