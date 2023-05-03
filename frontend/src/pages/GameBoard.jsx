@@ -29,6 +29,13 @@ const LaunchButton = styled.button`
   background-color: black;
   border-radius: 0px;
   border: none;
+  border: 3px solid rgba(255, 255, 255, 0.2);
+  &:hover,
+  :focus,
+  :active {
+    border-color: var(--secondary-color);
+    color: var(--secondary-color);
+  }
 
   @media (min-width: 768px) {
     position: initial;
@@ -50,7 +57,7 @@ const LaunchButton = styled.button`
 const categories = [
   {
     name: "General Knowledge",
-    category: 10,
+    category: 9,
     option: "General Knowledge",
     image: { uri: "/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
     style: {

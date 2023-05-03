@@ -1,4 +1,5 @@
 import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import "./Question.css";
 
@@ -9,84 +10,98 @@ function Question({
   setScore,
   score,
 }) {
+  const oneQuestion = questions[currentQuest];
+  // eslint-disable-next-line
+  const { correct_answer, incorrect_answers, question } = oneQuestion;
+  // eslint-disable-next-line
+  const incorrectAnswers = incorrect_answers;
+  // eslint-disable-next-line
+  const correctAnswer = correct_answer;
+  const allAnswers = [correctAnswer, ...incorrectAnswers];
+  const navigate = useNavigate();
+
+  const [questionTitle, setQuestionTitle] = useState("");
+
   //   state de modification des réponses
-  const [options, setOptions] = useState();
-  //   state de modification des classes des réponses
-  const [wrongAnswerClass, setWrongAnswerClass] = useState("");
-  const [rightAnswerClass, setRightAnswerClass] = useState("");
+  const [answers, setAnswers] = useState([]);
+
   //   state de modification de l'état cliquable
   const [clicked, setClicked] = useState(false);
+
+  // state qui récupère la valeur texte de la réponse sélectionnée
+  const [selectedAnswer, setSelectedAnswer] = useState(null);
 
   // fonction permettant de mélanger les éléments d'un tableau.
   const handleShuffle = (arr) => {
     return arr.sort(() => Math.random() - 0.5);
   };
 
-  // useffect permettant de mélanger les réponses afin qu'elles ne soient pas toujours dans le même ordre.
+  // récupère le texte de la réponse sélectionnée
+  const handleClickSelect = (event) => {
+    setSelectedAnswer(event.target.textContent);
+    setClicked(true);
+  };
+
+  // effet permettant d'incrémenter le score si une réponse est sélectionnée et si la réponse est correcte
   useEffect(() => {
-    if (questions) {
-      setOptions(
-        handleShuffle([
-          questions[currentQuest].correct_answer,
-          ...questions[currentQuest].incorrect_answers,
-        ])
-      );
-      setClicked(false);
-    }
-  }, [currentQuest]);
-
-  //   fonction permettant d'afficher la bonne et les mauvaises réponses après un clic sur l'une d'entre elles.
-  const handleClickClasses = (opt) => {
-    if (opt === questions[currentQuest].correct_answer) {
-      setRightAnswerClass("correct");
+    if (clicked && selectedAnswer === correctAnswer) {
       setScore(score + 200);
-    } else {
-      setWrongAnswerClass("wrong");
-      setRightAnswerClass("correct");
     }
-  };
+  }, [clicked, selectedAnswer]);
 
-  //   fonction permettant d'afficher la question suivante de façon aléatoire dans un délai après le clic.
-  const handleClickNext = () => {
-    setTimeout(() => {
-      setRightAnswerClass("");
-      setWrongAnswerClass("");
-      questions.splice(currentQuest, 1);
-      setCurrentQuest(Math.floor(Math.random() * questions.length) + 1);
-    }, 1600);
-  };
+  useEffect(() => {
+    // si une réponse est cliquée, lance une fonction avec une latence de 1s
+    if (clicked === true) {
+      setTimeout(() => {
+        // si le nombre de questions fetchées est supérieur à 1, on enlève la question à laquelle on a répondu et on restocke une question aléatoire dans la variable currentQuest. Si on est arrivé au bout du pull de questions, on retourne au plateau de jeu.
+        if (questions.length > 1) {
+          questions.splice(currentQuest, 1);
+          setCurrentQuest(Math.floor(Math.random() * questions.length));
+          setClicked(false);
+        } else if (questions.length === 1) {
+          setCurrentQuest(0);
+          setClicked(true);
+          navigate("/gameboard");
+        }
+      }, 1000);
+    }
+  }, [clicked]);
+
+  // hook pour mélanger les réponses et afficher le titre de la question
+  useEffect(() => {
+    setQuestionTitle(question);
+    setAnswers(() => handleShuffle(allAnswers));
+  }, [oneQuestion]);
 
   // ------------------------return du composant---------------------------
   return (
-    <div>
+    <div className="questionContent">
       <div>
-        <h1 className="question">{questions[currentQuest].question}</h1>
+        <h1 className="question">{questionTitle}</h1>
       </div>
       <div className="answers">
-        {options
-          ? options.map((opt) => {
-              return (
-                <button
-                  onClick={() => {
-                    setClicked(true);
-                    handleClickClasses(opt);
-                    handleClickNext();
-                  }}
-                  className={`singleOption
-                    ${
-                      opt === questions[currentQuest].correct_answer
-                        ? rightAnswerClass
-                        : wrongAnswerClass
-                    }`}
-                  key={opt}
-                  type="button"
-                  disabled={clicked}
-                >
-                  {opt}
-                </button>
-              );
-            })
-          : null}
+        {answers.map((answer) => {
+          let className = `singleAnswer`;
+
+          if (answer === correctAnswer && answer === selectedAnswer) {
+            className += ` correct`;
+          }
+          if (answer !== correctAnswer && answer === selectedAnswer) {
+            className += ` incorrect`;
+          }
+
+          return (
+            <button
+              key={answer}
+              onClick={handleClickSelect}
+              className={className}
+              disabled={clicked}
+              type="button"
+            >
+              {answer}
+            </button>
+          );
+        })}
       </div>
     </div>
   );
