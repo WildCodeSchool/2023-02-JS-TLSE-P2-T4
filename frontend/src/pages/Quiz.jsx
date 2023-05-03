@@ -68,7 +68,9 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
       <div className="quizContainer">
         <div className="quizHeader">
           <div className="score">
-            <p>Score : {score}</p>
+            <p>
+              Score : <span className="scoreNumb">{score}</span>
+            </p>
           </div>
           <div className="timer">
             <img

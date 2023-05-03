@@ -21,7 +21,9 @@ function Home({
         <p className="welcomeComment">
           Test your knowledge and challenge your brain with our exiting Quiz!
         </p>
-        <p className="welcomeChoice">Try it !</p>
+        <p className="welcomeChoice">
+          Select your preferences or get started right away!
+        </p>
       </section>
 
       {modalIsOpen ? (
