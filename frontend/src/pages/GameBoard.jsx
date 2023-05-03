@@ -4,6 +4,8 @@ import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Square from "../components/Square";
 import SpinWheel from "../components/SpinWheel";
+import { PositionSquare } from "../components/Utils";
+
 import "./GameBoard.css";
 
 const BoardGrid = styled.div`
@@ -163,96 +165,17 @@ function GameBoard({
       </div>
       <div>
         <BoardGrid colMobile={3} rowMobile={7} colDesk={7} rowDesk={4}>
-          <Square
-            positionColMobile={1}
-            positionRowMobile={1}
-            positionColDesk={1}
-            positionRowDesk={1}
-          />
-          <Square
-            positionColMobile={2}
-            positionRowMobile={1}
-            positionColDesk={2}
-            positionRowDesk={1}
-          />
-          <Square
-            positionColMobile={3}
-            positionRowMobile={1}
-            positionColDesk={3}
-            positionRowDesk={1}
-          />
-          <Square
-            positionColMobile={3}
-            positionRowMobile={2}
-            positionColDesk={4}
-            positionRowDesk={1}
-          />
-          <Square
-            positionColMobile={3}
-            positionRowMobile={3}
-            positionColDesk={5}
-            positionRowDesk={1}
-          />
-          <Square
-            positionColMobile={2}
-            positionRowMobile={3}
-            positionColDesk={6}
-            positionRowDesk={1}
-          />
-          <Square
-            positionColMobile={1}
-            positionRowMobile={3}
-            positionColDesk={7}
-            positionRowDesk={1}
-          />
-          <Square
-            positionColMobile={1}
-            positionRowMobile={4}
-            positionColDesk={7}
-            positionRowDesk={2}
-          />
-          <Square
-            positionColMobile={1}
-            positionRowMobile={5}
-            positionColDesk={7}
-            positionRowDesk={3}
-          />
-          <Square
-            positionColMobile={2}
-            positionRowMobile={5}
-            positionColDesk={7}
-            positionRowDesk={4}
-          />
-          <Square
-            positionColMobile={3}
-            positionRowMobile={5}
-            positionColDesk={6}
-            positionRowDesk={4}
-          />
-          <Square
-            positionColMobile={3}
-            positionRowMobile={6}
-            positionColDesk={5}
-            positionRowDesk={4}
-          />
-          <Square
-            positionColMobile={3}
-            positionRowMobile={7}
-            positionColDesk={4}
-            positionRowDesk={4}
-          />
-          <Square
-            positionColMobile={2}
-            positionRowMobile={7}
-            positionColDesk={3}
-            positionRowDesk={4}
-          />
-          <Square
-            positionColMobile={1}
-            positionRowMobile={7}
-            positionColDesk={2}
-            positionRowDesk={4}
-          />
+          {PositionSquare.map((el) => {
+            return (
+              <Square
+                key={el.id}
+                positionColMobile={el.YM}
+                positionRowMobile={el.XM}
+                positionColDesk={el.YD}
+                positionRowDesk={el.XD}
+              />
+            );
+          })}
           <LaunchButton onClick={handleSpinClick}>Launch</LaunchButton>
         </BoardGrid>
         <SpinWheel
