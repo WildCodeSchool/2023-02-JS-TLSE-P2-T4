@@ -18,7 +18,9 @@ function Navbar() {
   return (
     <nav className="nav">
       <div className="appLogo">
-        <img src="/assets/logo.png" alt="logo Quizilla" />
+        <Link to="/">
+          <img src="/assets/logo.png" alt="logo Quizilla" />
+        </Link>
       </div>
       <ul className={active} onClick={navToggle} aria-hidden>
         <li className="navItem">
