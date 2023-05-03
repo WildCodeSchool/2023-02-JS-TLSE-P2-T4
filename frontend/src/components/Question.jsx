@@ -7,8 +7,9 @@ function Question({
   currentQuest,
   questions,
   setCurrentQuest,
-  setScore,
-  score,
+  currentScore,
+  setCurrentScore,
+  setRoundEnd,
 }) {
   const oneQuestion = questions[currentQuest];
   // eslint-disable-next-line
@@ -45,7 +46,7 @@ function Question({
   // effet permettant d'incrémenter le score si une réponse est sélectionnée et si la réponse est correcte
   useEffect(() => {
     if (clicked && selectedAnswer === correctAnswer) {
-      setScore(score + 200);
+      setCurrentScore(currentScore + 10);
     }
   }, [clicked, selectedAnswer]);
 
@@ -61,6 +62,7 @@ function Question({
         } else if (questions.length === 1) {
           setCurrentQuest(0);
           setClicked(true);
+          setRoundEnd(true);
           navigate("/gameboard");
         }
       }, 1000);
@@ -118,15 +120,16 @@ Question.propTypes = {
   ),
   currentQuest: PropTypes.number,
   setCurrentQuest: PropTypes.func,
-  score: PropTypes.number,
-  setScore: PropTypes.func,
+  currentScore: PropTypes.number,
+  setCurrentScore: PropTypes.func,
+  setRoundEnd: PropTypes.func.isRequired,
 };
 
 Question.defaultProps = {
   currentQuest: 0,
   questions: [],
-  score: 0,
-  setScore: 0,
+  currentScore: 0,
+  setCurrentScore: 0,
   setCurrentQuest: 0,
 };
 

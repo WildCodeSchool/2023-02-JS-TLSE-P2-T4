@@ -13,38 +13,6 @@ function SpinWheel({
   setShowCat,
   showModal,
 }) {
-  SpinWheel.propTypes = {
-    categories: PropTypes.arrayOf(
-      PropTypes.shape({
-        name: PropTypes.string.isRequired,
-        category: PropTypes.number.isRequired,
-        option: PropTypes.string.isRequired,
-        image: PropTypes.shape({
-          offsetY: PropTypes.number.isRequired,
-          uri: PropTypes.string.isRequired,
-        }).isRequired,
-        style: PropTypes.shape({
-          backgroundColor: PropTypes.string.isRequired,
-        }).isRequired,
-      }).isRequired
-    ),
-    mustSpin: PropTypes.bool,
-    setMustSpin: PropTypes.func,
-    prizeNumber: PropTypes.number,
-    showCat: PropTypes.bool,
-    setShowCat: PropTypes.func,
-    showModal: PropTypes.bool,
-  };
-  SpinWheel.defaultProps = {
-    categories: [],
-    mustSpin: false,
-    setMustSpin: false,
-    prizeNumber: 0,
-    showCat: false,
-    setShowCat: false,
-    showModal: false,
-  };
-
   const { image, name, category } = categories[prizeNumber];
 
   return (
@@ -73,5 +41,37 @@ function SpinWheel({
     </div>
   );
 }
+
+SpinWheel.propTypes = {
+  categories: PropTypes.arrayOf(
+    PropTypes.shape({
+      name: PropTypes.string.isRequired,
+      category: PropTypes.number.isRequired,
+      option: PropTypes.string.isRequired,
+      image: PropTypes.shape({
+        offsetY: PropTypes.number.isRequired,
+        uri: PropTypes.string.isRequired,
+      }).isRequired,
+      style: PropTypes.shape({
+        backgroundColor: PropTypes.string.isRequired,
+      }).isRequired,
+    }).isRequired
+  ),
+  mustSpin: PropTypes.bool,
+  setMustSpin: PropTypes.func,
+  prizeNumber: PropTypes.number,
+  showCat: PropTypes.bool,
+  setShowCat: PropTypes.func,
+  showModal: PropTypes.bool,
+};
+SpinWheel.defaultProps = {
+  categories: [],
+  mustSpin: false,
+  setMustSpin: false,
+  prizeNumber: 0,
+  showCat: false,
+  setShowCat: false,
+  showModal: false,
+};
 
 export default SpinWheel;
