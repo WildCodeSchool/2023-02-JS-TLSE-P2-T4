@@ -66,9 +66,11 @@ function Quiz({
       .catch((err) => console.error(err));
   }, []);
 
-  if (currentScore >= 60) {
-    setRoundValid(true);
-  }
+  useEffect(() => {
+    if (currentScore >= 60) {
+      setRoundValid(true);
+    }
+  }, [currentScore]);
 
   return (
     questions && (

@@ -106,13 +106,14 @@ function GameBoard({
   setRoundValid,
   currentPosition,
   setCurrentPosition,
+  life,
+  setLife,
 }) {
   const navigate = useNavigate();
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [showCat, setShowCat] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const [life, setLife] = useState(1);
 
   useEffect(() => {
     if (!roundValid && !roundEnd && currentPosition === 16) {
@@ -122,11 +123,11 @@ function GameBoard({
       setRoundEnd(false);
       setRoundValid(false);
       setCurrentPosition(currentPosition + 1);
-    } else if (roundEnd && life !== -1) {
+    } else if (roundEnd && !roundValid && life > 0) {
       setTotalScore(totalScore + currentScore);
       setLife(life - 1);
       setRoundEnd(false);
-    } else if (roundEnd && life === -1) {
+    } else if (roundEnd && life <= 0) {
       setTotalScore(totalScore + currentScore);
       setRoundEnd(false);
       navigate("/loser");
@@ -146,6 +147,7 @@ function GameBoard({
       setRoundValid(false);
     }
   };
+  console.log(roundEnd, roundValid, currentPosition, life);
 
   return (
     <div>
@@ -272,6 +274,8 @@ GameBoard.propTypes = {
   setRoundValid: PropTypes.func.isRequired,
   currentPosition: PropTypes.number.isRequired,
   setCurrentPosition: PropTypes.func.isRequired,
+  life: PropTypes.number.isRequired,
+  setLife: PropTypes.func.isRequired,
 };
 
 export default GameBoard;

@@ -34,6 +34,7 @@ function App() {
   const [currentScore, setCurrentScore] = useState(0);
   const [roundEnd, setRoundEnd] = useState(false);
   const [roundValid, setRoundValid] = useState(false);
+  const [life, setLife] = useState(1);
 
   return (
     <Router>
@@ -68,6 +69,8 @@ function App() {
                 setRoundEnd={setRoundEnd}
                 roundValid={roundValid}
                 setRoundValid={setRoundValid}
+                life={life}
+                setLife={setLife}
               />
             }
           />
