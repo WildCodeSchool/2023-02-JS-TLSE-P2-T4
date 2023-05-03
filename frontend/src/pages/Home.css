@@ -59,7 +59,7 @@
   }
   .welcomeChoice {
     font-size: 2rem;
-    margin: 40px auto;
+    margin: 56px auto 40px auto;
   }
   .buttons {
     flex-direction: row;
