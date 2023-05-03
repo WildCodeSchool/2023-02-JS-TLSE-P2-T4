@@ -1,8 +1,9 @@
 import React, { useState, useEffect } from "react";
 import { useNavigate } from "react-router-dom";
+import PropTypes from "prop-types";
 
-function Timer() {
-  const [time, setTime] = useState(60);
+function Timer({ setRoundEnd, selectedTimer }) {
+  const [time, setTime] = useState(selectedTimer.valueT);
   const navigate = useNavigate();
 
   useEffect(() => {
@@ -12,6 +13,7 @@ function Timer() {
         setTime(time - 1);
       } else {
         clearInterval(interval);
+        setRoundEnd(true);
         navigate("/gameboard");
       }
     }, 1000);
@@ -22,5 +24,10 @@ function Timer() {
 
   return <div>{time} sec</div>;
 }
+
+Timer.propTypes = {
+  selectedTimer: PropTypes.objectOf(PropTypes.number).isRequired,
+  setRoundEnd: PropTypes.func.isRequired,
+};
 
 export default Timer;

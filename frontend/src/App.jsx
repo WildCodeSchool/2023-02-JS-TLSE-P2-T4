@@ -29,6 +29,13 @@ function App() {
   const [selectedDifficulty, setSelectedDifficulty] = useState({
     valueD: "easy",
   });
+  const [currentPosition, setCurrentPosition] = useState(0);
+  const [totalScore, setTotalScore] = useState(0);
+  const [currentScore, setCurrentScore] = useState(0);
+  const [roundEnd, setRoundEnd] = useState(false);
+  const [roundValid, setRoundValid] = useState(false);
+  const [life, setLife] = useState(1);
+
   return (
     <Router>
       <div className="app">
@@ -51,21 +58,38 @@ function App() {
             path="/gameboard"
             element={
               <GameBoard
-                selectedTimer={selectedTimer}
                 selectedDifficulty={selectedDifficulty}
+                currentPosition={currentPosition}
+                setCurrentPosition={setCurrentPosition}
+                totalScore={totalScore}
+                setTotalScore={setTotalScore}
+                currentScore={currentScore}
+                setCurrentScore={setCurrentScore}
+                roundEnd={roundEnd}
+                setRoundEnd={setRoundEnd}
+                roundValid={roundValid}
+                setRoundValid={setRoundValid}
+                life={life}
+                setLife={setLife}
               />
             }
           />
           <Route path="/about-us" element={<AboutUs />} />
           <Route path="/rules" element={<Rules />} />
-          <Route path="/winner" element={<Winner />} />
-          <Route path="/loser" element={<Loser />} />
+          <Route path="/winner" element={<Winner totalScore={totalScore} />} />
+          <Route path="/loser" element={<Loser totalScore={totalScore} />} />
           <Route
             path="/gameboard/quiz"
             element={
               <Quiz
                 selectedTimer={selectedTimer}
                 selectedDifficulty={selectedDifficulty}
+                currentScore={currentScore}
+                setCurrentScore={setCurrentScore}
+                roundEnd={roundEnd}
+                setRoundEnd={setRoundEnd}
+                roundValid={roundValid}
+                setRoundValid={setRoundValid}
               />
             }
           />
