@@ -5,25 +5,24 @@
   gap: 4%;
   padding-top: 35px;
   width: 100%;
-  padding-top: 15%;
+  padding-top: 5%;
 }
 
 .title {
   font-size: 2.5rem;
-  color: #000;
+  color: #fff;
   text-align: center;
-  text-decoration: underline;
 }
 figcaption {
-  color: #000;
+  color: #fff;
   margin: 10px;
   text-align: center;
   font-size: 2rem;
 }
 
 figure img {
-  width: 34vh;
-  height: 34vh;
+  width: 32vh;
+  height: 32vh;
   object-fit: cover;
   padding: 6px;
   border: 1.5px solid #ccc;
@@ -41,6 +40,29 @@ figure img :hover {
   background-color: rgba(0, 0, 0, 0.5);
   cursor: pointer;
 }
+.aboutUs {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  font-size: 1.8rem;
+  gap: 75px;
+  padding: 20vh;
+  line-height: 5.2vh;
+}
+.about {
+  font-weight: bold;
+  text-align: center;
+  font-size: 3rem;
+  padding: 35px;
+}
+.aboutText span {
+  font-style: italic;
+}
+.source {
+  margin: 26px;
+  font-style: italic;
+  text-align: center;
+}
 
 @media screen and (max-width: 768px) {
   .author {
@@ -50,8 +72,8 @@ figure img :hover {
     align-items: center;
   }
   figure img {
-    width: 26vh;
-    height: 26vh;
+    width: 24vh;
+    height: 24vh;
     border: 2px solid #000;
   }
   figcaption {
@@ -61,5 +83,33 @@ figure img :hover {
     flex-direction: column;
     justify-content: center;
     align-items: center;
+  }
+  .aboutUs {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    line-height: 3.5vh;
+    font-size: 1rem;
+    gap: 35px;
+  }
+  .title {
+    font-size: 1.5rem;
+    color: #fff;
+    text-align: center;
+  }
+  .aboutText {
+    width: 350px;
+  }
+  .source {
+    font-size: 1.4rem;
+    align-items: center;
+  }
+  .aboutText p {
+    font-size: 1.4rem;
+    text-align: center;
+  }
+  .about {
+    text-align: center;
+    font-size: 2rem;
   }
 }

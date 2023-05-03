@@ -4,23 +4,24 @@
   justify-content: space-between;
   height: 10vh;
   background: transparent;
+  padding: 0 16px 0px 8px;
 }
 .appLogo img {
-  width: 90px;
-  cursor: pointer;
+  width: 90px; 
   color: #fff;
+  cursor: pointer;
 }
 
-.nav__menu {
+.navMenu {
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 2rem;
+  gap: 4rem;
 }
-.nav__toggler {
+.navToggler {
   display: none;
 }
-.nav__toggler div {
+.navToggler div {
   width: 2.5rem;
   height: 0.2rem;
   margin: 0.4rem;
@@ -29,7 +30,7 @@
 }
 
 @media screen and (max-width: 768px) {
-  .nav__toggler {
+  .navToggler {
     display: block;
     cursor: pointer;
     background: transparent;
@@ -37,7 +38,7 @@
     padding: 0;
   }
 
-  .nav__toggler:focus {
+  .navToggler:focus {
     outline: none;
   }
 
@@ -48,22 +49,24 @@
     transition: transform 0.5s ease;
   }
 
-  .nav__menu {
+  .navMenu {
     position: fixed;
     top: 8vh;
     right: 0;
-    height: 26vh;
-    width: 35vw;
+    height: 32vh;
+    width: 40vw;
     flex-direction: column;
+    justify-content: space-evenly;
     transform: translateX(100%);
-    transition: 0.8s ease-in;
-    background: #000000;
+    transition: 0.5s ease-in;
+    background: rgba(0, 0, 0, 0.9);
     z-index: 2;
-    padding: 8px;
+    padding: 28px;
+    border-radius: 14px;
   }
 }
-/* Active Class */
-.nav__active {
+
+.navActive {
   transform: translateX(0%);
 }
 
@@ -77,16 +80,4 @@
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-8px, -5px);
-}
-.nav__item {
-  color: white;
-  border: 1px solid transparent;
-  border-radius: 3px;
-  text-decoration: none;
-  padding: 4px 8px;
-}
-.nav__item:hover {
-  transition: 0.5s;
-  color: yellow;
-  border: 1px solid white;
 }

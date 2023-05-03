@@ -21,7 +21,9 @@ function Home({
         <p className="welcomeComment">
           Test your knowledge and challenge your brain with our exiting Quiz!
         </p>
-        <p className="welcomeChoice">Try it !</p>
+        <p className="welcomeChoice">
+          Select your preferences or get started right away!
+        </p>
       </section>
 
       {modalIsOpen ? (
@@ -37,13 +39,12 @@ function Home({
       ) : (
         <section className="buttons">
           <button
-            className="button settings"
             type="button"
+            className="button settings"
             onClick={() => setModalIsOpen(true)}
           >
             Settings
           </button>
-
           <Link to="/gameboard">
             <button
               className="button start"
