@@ -37,9 +37,17 @@ function Home({
           setModalIsOpen={setModalIsOpen}
         />
       ) : (
-        <section className="buttonsStartSettings">
+        <section className="buttons">
+          <button
+            type="button"
+            className="button setings"
+            onClick={() => setModalIsOpen(true)}
+          >
+            Settings
+          </button>
           <Link to="/gameboard">
             <button
+              className="button start"
               type="button"
               onClick={() => {
                 setSelectedTimer({ valueT: 60 });
@@ -49,9 +57,6 @@ function Home({
               Start
             </button>
           </Link>
-          <button type="button" onClick={() => setModalIsOpen(true)}>
-            Settings
-          </button>
         </section>
       )}
     </section>
