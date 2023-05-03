@@ -7,7 +7,14 @@ import Question from "../components/Question";
 import Timer from "../components/Timer";
 import "./Quiz.css";
 
-function Quiz({ selectedTimer, selectedDifficulty }) {
+function Quiz({
+  selectedTimer,
+  selectedDifficulty,
+  currentScore,
+  setCurrentScore,
+  setRoundEnd,
+  setRoundValid,
+}) {
   const { state } = useLocation();
   const { category } = state;
   const { valueD } = selectedDifficulty;
@@ -16,8 +23,6 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
   const [questions, setQuestions] = useState();
   // state permettant de mettre à jour la question affichée de façon randomisée
   const [currentQuest, setCurrentQuest] = useState();
-  // state pour incrémenter le score
-  const [score, setScore] = useState(0);
 
   // fetch des données
   useEffect(() => {
@@ -61,7 +66,11 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
       .catch((err) => console.error(err));
   }, []);
 
-  // hook pour naviguer automatiquement vers le board après un délai de 60s
+  useEffect(() => {
+    if (currentScore >= 60) {
+      setRoundValid(true);
+    }
+  }, [currentScore]);
 
   return (
     questions && (
@@ -69,7 +78,7 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
         <div className="quizHeader">
           <div className="score">
             <p>
-              Score : <span className="scoreNumb">{score}</span>
+              Score : <span className="scoreNumb">{currentScore}</span>
             </p>
           </div>
           <div className="timer">
@@ -78,7 +87,11 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
               src="\assets\Timer_Icon.svg"
               alt="time icon"
             />
-            <Timer valueT={valueT} />
+            <Timer
+              valueT={valueT}
+              setRoundEnd={setRoundEnd}
+              selectedTimer={selectedTimer}
+            />
           </div>
         </div>
 
@@ -86,9 +99,10 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
           key={currentQuest}
           currentQuest={currentQuest}
           setCurrentQuest={setCurrentQuest}
-          setScore={setScore}
-          score={score}
+          setCurrentScore={setCurrentScore}
+          currentScore={currentScore}
           questions={questions}
+          setRoundEnd={setRoundEnd}
         />
       </div>
     )
@@ -98,6 +112,10 @@ function Quiz({ selectedTimer, selectedDifficulty }) {
 Quiz.propTypes = {
   selectedTimer: PropTypes.objectOf(PropTypes.number),
   selectedDifficulty: PropTypes.objectOf(PropTypes.string),
+  currentScore: PropTypes.number.isRequired,
+  setCurrentScore: PropTypes.func.isRequired,
+  setRoundEnd: PropTypes.func.isRequired,
+  setRoundValid: PropTypes.func.isRequired,
 };
 
 Quiz.defaultProps = {

@@ -1,5 +1,6 @@
 import styled from "styled-components";
-import { useState } from "react";
+import { useEffect, useState } from "react";
+import { useNavigate } from "react-router-dom";
 import PropTypes from "prop-types";
 import Square from "../components/Square";
 import SpinWheel from "../components/SpinWheel";
@@ -101,12 +102,46 @@ const categories = [
   },
 ];
 
-function GameBoard({ selectedTimer, selectedDifficulty }) {
+function GameBoard({
+  totalScore,
+  setTotalScore,
+  currentScore,
+  setCurrentScore,
+  roundEnd,
+  setRoundEnd,
+  roundValid,
+  setRoundValid,
+  currentPosition,
+  setCurrentPosition,
+  life,
+  setLife,
+}) {
+  const navigate = useNavigate();
   const [mustSpin, setMustSpin] = useState(false);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [showCat, setShowCat] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
+  useEffect(() => {
+    if (!roundValid && !roundEnd && currentPosition === 16) {
+      navigate("/winner");
+    } else if (roundValid && roundEnd) {
+      setTotalScore(totalScore + currentScore);
+      setRoundEnd(false);
+      setRoundValid(false);
+      setCurrentPosition(currentPosition + 1);
+    } else if (roundEnd && !roundValid && life > 0) {
+      setTotalScore(totalScore + currentScore);
+      setLife(life - 1);
+      setRoundEnd(false);
+    } else if (roundEnd && life <= 0) {
+      setTotalScore(totalScore + currentScore);
+      setRoundEnd(false);
+      navigate("/loser");
+    }
+  }, [roundEnd]);
+
+  // Permet de lancer la roue
   const handleSpinClick = () => {
     if (!mustSpin) {
       const newPrizeNumber = Math.floor(Math.random() * categories.length);
@@ -114,127 +149,139 @@ function GameBoard({ selectedTimer, selectedDifficulty }) {
       setMustSpin(true);
       setShowCat(false);
       setShowModal(true);
+      setCurrentScore(0);
+      setRoundEnd(false);
+      setRoundValid(false);
     }
   };
+
   return (
     <div>
-      <BoardGrid colMobile={3} rowMobile={7} colDesk={7} rowDesk={4}>
-        <Square
-          positionColMobile={1}
-          positionRowMobile={1}
-          positionColDesk={1}
-          positionRowDesk={1}
+      <div className="labelTotalScoreLife">
+        <div className="labelTotalScore">Total Score {totalScore}</div>
+        <div className="labelLife">{life}</div>
+      </div>
+      <div>
+        <BoardGrid colMobile={3} rowMobile={7} colDesk={7} rowDesk={4}>
+          <Square
+            positionColMobile={1}
+            positionRowMobile={1}
+            positionColDesk={1}
+            positionRowDesk={1}
+          />
+          <Square
+            positionColMobile={2}
+            positionRowMobile={1}
+            positionColDesk={2}
+            positionRowDesk={1}
+          />
+          <Square
+            positionColMobile={3}
+            positionRowMobile={1}
+            positionColDesk={3}
+            positionRowDesk={1}
+          />
+          <Square
+            positionColMobile={3}
+            positionRowMobile={2}
+            positionColDesk={4}
+            positionRowDesk={1}
+          />
+          <Square
+            positionColMobile={3}
+            positionRowMobile={3}
+            positionColDesk={5}
+            positionRowDesk={1}
+          />
+          <Square
+            positionColMobile={2}
+            positionRowMobile={3}
+            positionColDesk={6}
+            positionRowDesk={1}
+          />
+          <Square
+            positionColMobile={1}
+            positionRowMobile={3}
+            positionColDesk={7}
+            positionRowDesk={1}
+          />
+          <Square
+            positionColMobile={1}
+            positionRowMobile={4}
+            positionColDesk={7}
+            positionRowDesk={2}
+          />
+          <Square
+            positionColMobile={1}
+            positionRowMobile={5}
+            positionColDesk={7}
+            positionRowDesk={3}
+          />
+          <Square
+            positionColMobile={2}
+            positionRowMobile={5}
+            positionColDesk={7}
+            positionRowDesk={4}
+          />
+          <Square
+            positionColMobile={3}
+            positionRowMobile={5}
+            positionColDesk={6}
+            positionRowDesk={4}
+          />
+          <Square
+            positionColMobile={3}
+            positionRowMobile={6}
+            positionColDesk={5}
+            positionRowDesk={4}
+          />
+          <Square
+            positionColMobile={3}
+            positionRowMobile={7}
+            positionColDesk={4}
+            positionRowDesk={4}
+          />
+          <Square
+            positionColMobile={2}
+            positionRowMobile={7}
+            positionColDesk={3}
+            positionRowDesk={4}
+          />
+          <Square
+            positionColMobile={1}
+            positionRowMobile={7}
+            positionColDesk={2}
+            positionRowDesk={4}
+          />
+          <LaunchButton onClick={handleSpinClick}>Launch</LaunchButton>
+        </BoardGrid>
+        <SpinWheel
+          categories={categories}
+          mustSpin={mustSpin}
+          setMustSpin={setMustSpin}
+          prizeNumber={prizeNumber}
+          showCat={showCat}
+          setShowCat={setShowCat}
+          showModal={showModal}
         />
-        <Square
-          positionColMobile={2}
-          positionRowMobile={1}
-          positionColDesk={2}
-          positionRowDesk={1}
-        />
-        <Square
-          positionColMobile={3}
-          positionRowMobile={1}
-          positionColDesk={3}
-          positionRowDesk={1}
-        />
-        <Square
-          positionColMobile={3}
-          positionRowMobile={2}
-          positionColDesk={4}
-          positionRowDesk={1}
-        />
-        <Square
-          positionColMobile={3}
-          positionRowMobile={3}
-          positionColDesk={5}
-          positionRowDesk={1}
-        />
-        <Square
-          positionColMobile={2}
-          positionRowMobile={3}
-          positionColDesk={6}
-          positionRowDesk={1}
-        />
-        <Square
-          positionColMobile={1}
-          positionRowMobile={3}
-          positionColDesk={7}
-          positionRowDesk={1}
-        />
-        <Square
-          positionColMobile={1}
-          positionRowMobile={4}
-          positionColDesk={7}
-          positionRowDesk={2}
-        />
-        <Square
-          positionColMobile={1}
-          positionRowMobile={5}
-          positionColDesk={7}
-          positionRowDesk={3}
-        />
-        <Square
-          positionColMobile={2}
-          positionRowMobile={5}
-          positionColDesk={7}
-          positionRowDesk={4}
-        />
-        <Square
-          positionColMobile={3}
-          positionRowMobile={5}
-          positionColDesk={6}
-          positionRowDesk={4}
-        />
-        <Square
-          positionColMobile={3}
-          positionRowMobile={6}
-          positionColDesk={5}
-          positionRowDesk={4}
-        />
-        <Square
-          positionColMobile={3}
-          positionRowMobile={7}
-          positionColDesk={4}
-          positionRowDesk={4}
-        />
-        <Square
-          positionColMobile={2}
-          positionRowMobile={7}
-          positionColDesk={3}
-          positionRowDesk={4}
-        />
-        <Square
-          positionColMobile={1}
-          positionRowMobile={7}
-          positionColDesk={2}
-          positionRowDesk={4}
-        />
-        <LaunchButton onClick={handleSpinClick}>Launch</LaunchButton>
-      </BoardGrid>
-      <SpinWheel
-        categories={categories}
-        mustSpin={mustSpin}
-        setMustSpin={setMustSpin}
-        prizeNumber={prizeNumber}
-        showCat={showCat}
-        setShowCat={setShowCat}
-        handleSpinClick={handleSpinClick}
-        showModal={showModal}
-        selectedTimer={selectedTimer}
-        selectedDifficulty={selectedDifficulty}
-      />
+      </div>
     </div>
   );
 }
 
 GameBoard.propTypes = {
-  selectedTimer: PropTypes.objectOf(PropTypes.number),
-  selectedDifficulty: PropTypes.objectOf(PropTypes.string),
-};
-
-GameBoard.defaultProps = {
-  selectedTimer: { valueT: 60 },
-  selectedDifficulty: { valueD: "Easy" },
+  totalScore: PropTypes.number.isRequired,
+  setTotalScore: PropTypes.func.isRequired,
+  currentScore: PropTypes.number.isRequired,
+  setCurrentScore: PropTypes.func.isRequired,
+  roundEnd: PropTypes.bool.isRequired,
+  setRoundEnd: PropTypes.func.isRequired,
+  roundValid: PropTypes.bool.isRequired,
+  setRoundValid: PropTypes.func.isRequired,
+  currentPosition: PropTypes.number.isRequired,
+  setCurrentPosition: PropTypes.func.isRequired,
+  life: PropTypes.number.isRequired,
+  setLife: PropTypes.func.isRequired,
 };
 
 export default GameBoard;
