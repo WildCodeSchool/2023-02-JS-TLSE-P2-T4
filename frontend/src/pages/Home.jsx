@@ -40,7 +40,7 @@ function Home({
         <section className="buttons">
           <button
             type="button"
-            className="button setings"
+            className="button settings"
             onClick={() => setModalIsOpen(true)}
           >
             Settings
