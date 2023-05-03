@@ -147,7 +147,6 @@ function GameBoard({
       setRoundValid(false);
     }
   };
-  console.log(roundEnd, roundValid, currentPosition, life);
 
   return (
     <div>
