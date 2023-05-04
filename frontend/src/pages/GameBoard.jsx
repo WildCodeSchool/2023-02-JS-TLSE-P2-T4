@@ -143,9 +143,7 @@ function GameBoard({
       setRoundValid(false);
       setValueSquare([...valueSquare, categories[prizeNumber]]);
       setCurrentPosition(currentPosition + 1);
-      if (currentPosition === 4) {
-        setLife(life + 1);
-      } else if (currentPosition === 9) {
+      if (currentPosition === 4 || currentPosition === 9) {
         setLife(life + 1);
       }
     } else if (roundEnd && !roundValid && life > 0) {
