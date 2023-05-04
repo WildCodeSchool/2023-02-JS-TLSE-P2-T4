@@ -128,6 +128,7 @@ function GameBoard({
   const [mustSpin, setMustSpin] = useState(false);
   const [showCat, setShowCat] = useState(false);
   const [showModal, setShowModal] = useState(false);
+  const width = true;
 
   useEffect(() => {
     if (roundValid && roundEnd && currentPosition === 14) {
@@ -199,7 +200,7 @@ function GameBoard({
             <LaunchButton onClick={handleSpinClick}>Launch</LaunchButton>
           ) : (
             <LaunchButton
-              width
+              width={width}
               onClick={() => navigate(buttonBoard === 1 ? "/winner" : "/loser")}
             >
               {buttonBoard === 1 ? "Winner Results" : "Loser Results"}
