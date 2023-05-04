@@ -44,10 +44,18 @@
   width: 14rem;
   height: 2.4rem;
   border-radius: 3rem;
-  font-size: 1.5rem;
+  font-size: 1.8rem;
   text-align: center;
   line-height: 2.4rem;
   margin: 1rem 0 1rem 0;
+}
+.normalLabel{
+  background-color: var(--bg-black-transparent);
+  color: var(--default-light-color)
+}
+.highScoreLabel{
+  color: black;
+  background-color: var(--default-light-color);
 }
 .newGame {
   width: 100%;
