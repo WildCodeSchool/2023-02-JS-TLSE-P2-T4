@@ -25,7 +25,7 @@ function App() {
     { valueD: "hard" },
     { valueD: "combined" },
   ];
-  const [selectedTimer, setSelectedTimer] = useState({ valueT: 45 });
+  const [selectedTimer, setSelectedTimer] = useState({ valueT: 60 });
   const [selectedDifficulty, setSelectedDifficulty] = useState({
     valueD: "easy",
   });
@@ -37,6 +37,7 @@ function App() {
   const [life, setLife] = useState(1);
   const [valueSquare, setValueSquare] = useState([]);
   const [prizeNumber, setPrizeNumber] = useState(0);
+  const [buttonBoard, setButtonBoard] = useState(0);
 
   return (
     <Router>
@@ -81,6 +82,8 @@ function App() {
                   setPrizeNumber={setPrizeNumber}
                   valueSquare={valueSquare}
                   setValueSquare={setValueSquare}
+                  buttonBoard={buttonBoard}
+                  setButtonBoard={setButtonBoard}
                 />
               </>
             }

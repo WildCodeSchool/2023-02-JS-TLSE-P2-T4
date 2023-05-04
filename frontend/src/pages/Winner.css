@@ -62,7 +62,11 @@
   display: flex;
   justify-content: center;
 }
-
+.newGame:hover,
+.newGame:focus {
+  border-color: var(--secondary-color);
+  color: var(--secondary-color);
+}
 @media screen and (max-width: 768px) {
   .winnerMessage {
     font-size: 1.8rem;
