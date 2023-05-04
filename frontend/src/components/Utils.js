@@ -1,7 +1,7 @@
 const LabelsL = [
   { id: 0, name: "NoobZilla ", points: 100 },
   { id: 1, name: "NoobZilla", points: 150 },
-  { id: 2, name: "NoobZilla ", points: 2000 },
+  { id: 2, name: "NoobZilla ", points: 200 },
   { id: 3, name: "NoobZilla  ", points: 250 },
   { id: 4, name: "NoobZilla", points: 300 },
   { id: 5, name: "NoobZilla  ", points: 350 },
