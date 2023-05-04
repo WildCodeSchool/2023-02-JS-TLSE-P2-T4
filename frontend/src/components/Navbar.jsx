@@ -20,10 +20,11 @@ function Navbar({ navIsVisible }) {
       setIcon("navToggler toggle");
     } else setIcon("navToggler");
   };
+
   return (
     <nav className="nav">
       <div className="appLogo">
-        <Link to="/">
+        <Link to="/" reloadDocument>
           <img src="/assets/logo.png" alt="logo Quizilla" />
         </Link>
       </div>
@@ -47,7 +48,7 @@ function Navbar({ navIsVisible }) {
           </button>
         </>
       ) : (
-        <Link to="/" className="exit">
+        <Link to="/" className="exit" reloadDocument>
           <img src="./assets/Exit_Icon.svg" alt="icon" />
         </Link>
       )}
