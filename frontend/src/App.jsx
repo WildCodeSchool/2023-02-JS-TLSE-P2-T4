@@ -35,6 +35,8 @@ function App() {
   const [roundEnd, setRoundEnd] = useState(false);
   const [roundValid, setRoundValid] = useState(false);
   const [life, setLife] = useState(1);
+  const [valueSquare, setValueSquare] = useState([]);
+  const [prizeNumber, setPrizeNumber] = useState(0);
 
   return (
     <Router>
@@ -75,6 +77,10 @@ function App() {
                   setRoundValid={setRoundValid}
                   life={life}
                   setLife={setLife}
+                  prizeNumber={prizeNumber}
+                  setPrizeNumber={setPrizeNumber}
+                  valueSquare={valueSquare}
+                  setValueSquare={setValueSquare}
                 />
               </>
             }
