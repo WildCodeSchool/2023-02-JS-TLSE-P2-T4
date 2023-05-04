@@ -6,6 +6,7 @@ import axios from "axios";
 import Question from "../components/Question";
 import Timer from "../components/Timer";
 import "./Quiz.css";
+import Loader from "../components/Loader";
 
 function Quiz({
   selectedTimer,
@@ -72,40 +73,40 @@ function Quiz({
     }
   }, [currentScore]);
 
-  return (
-    questions && (
-      <div className="quizContainer">
-        <div className="quizHeader">
-          <div className="score">
-            <p>
-              Score : <span className="scoreNumb">{currentScore}</span>
-            </p>
-          </div>
-          <div className="timer">
-            <img
-              className="timeIcon"
-              src="\assets\Timer_Icon.svg"
-              alt="time icon"
-            />
-            <Timer
-              valueT={valueT}
-              setRoundEnd={setRoundEnd}
-              selectedTimer={selectedTimer}
-            />
-          </div>
+  return questions ? (
+    <div className="quizContainer">
+      <div className="quizHeader">
+        <div className="score">
+          <p>
+            Score : <span className="scoreNumb">{currentScore}</span>
+          </p>
         </div>
-
-        <Question
-          key={currentQuest}
-          currentQuest={currentQuest}
-          setCurrentQuest={setCurrentQuest}
-          setCurrentScore={setCurrentScore}
-          currentScore={currentScore}
-          questions={questions}
-          setRoundEnd={setRoundEnd}
-        />
+        <div className="timer">
+          <img
+            className="timeIcon"
+            src="\assets\Timer_Icon.svg"
+            alt="time icon"
+          />
+          <Timer
+            valueT={valueT}
+            setRoundEnd={setRoundEnd}
+            selectedTimer={selectedTimer}
+          />
+        </div>
       </div>
-    )
+
+      <Question
+        key={currentQuest}
+        currentQuest={currentQuest}
+        setCurrentQuest={setCurrentQuest}
+        setCurrentScore={setCurrentScore}
+        currentScore={currentScore}
+        questions={questions}
+        setRoundEnd={setRoundEnd}
+      />
+    </div>
+  ) : (
+    <Loader />
   );
 }
 
