@@ -31,8 +31,8 @@ function Loser({ totalScore }) {
           ))}
         </ul>
       </section>
-      <section className="newGame">
-        <button type="button" onClick={RedirectHome}>
+      <section>
+        <button className="newGame" type="button" onClick={RedirectHome}>
           New Game
         </button>
       </section>
