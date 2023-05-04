@@ -15,6 +15,9 @@ function Quiz({
   setCurrentScore,
   setRoundEnd,
   setRoundValid,
+  currentPosition,
+  combinedDifficulty,
+  setCombinedDifficulty,
 }) {
   const { state } = useLocation();
   const { category } = state;
@@ -24,12 +27,21 @@ function Quiz({
   const [questions, setQuestions] = useState();
   // state permettant de mettre à jour la question affichée de façon randomisée
   const [currentQuest, setCurrentQuest] = useState();
-
+  function ternaryDifficulty() {
+    if (valueD === "combined" && currentPosition < 5) {
+      setCombinedDifficulty("easy");
+    } else if (valueD === "combined" && currentPosition < 10) {
+      setCombinedDifficulty("medium");
+    } else if (valueD === "combined") {
+      setCombinedDifficulty("hard");
+    } else setCombinedDifficulty(valueD);
+  }
   // fetch des données
   useEffect(() => {
+    ternaryDifficulty();
     axios
       .get(
-        `https://opentdb.com/api.php?amount=30&category=${category}&difficulty=${valueD}&type=multiple`
+        `https://opentdb.com/api.php?amount=30&category=${category}&difficulty=${combinedDifficulty}&type=multiple`
       )
       .then((res) => {
         // eslint-disable-next-line
@@ -117,6 +129,9 @@ Quiz.propTypes = {
   setCurrentScore: PropTypes.func.isRequired,
   setRoundEnd: PropTypes.func.isRequired,
   setRoundValid: PropTypes.func.isRequired,
+  currentPosition: PropTypes.number.isRequired,
+  combinedDifficulty: PropTypes.string.isRequired,
+  setCombinedDifficulty: PropTypes.func.isRequired,
 };
 
 Quiz.defaultProps = {
