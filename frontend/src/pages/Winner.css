@@ -62,8 +62,8 @@
   display: flex;
   justify-content: center;
 }
-button:hover,
-button:focus {
+.newGame:hover,
+.newGame:focus {
   border-color: var(--secondary-color);
   color: var(--secondary-color);
 }
@@ -75,7 +75,7 @@ button:focus {
     font-size: 1.6rem;
   }
   .resultBody {
-    height: 100vh;
+    height: 40vh;
   }
   .resultUl {
     height: 100%;
