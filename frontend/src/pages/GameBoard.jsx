@@ -15,7 +15,7 @@ const BoardGrid = styled.div`
   gap: 12px;
   grid-template-columns: ${({ colMobile }) => `repeat(${colMobile}, 100px)`};
   grid-template-rows: ${({ rowMobile }) => `repeat(${rowMobile}, 100px)`};
-  margin: 8% auto;
+  margin: 3% auto;
   justify-content: center;
 
   @media (min-width: 768px) {
@@ -197,7 +197,9 @@ function GameBoard({
   return (
     <div>
       <div className="labelTotalScoreLife">
-        <div className="labelTotalScore">Total Score {totalScore}</div>
+        <div className="labelTotalScore">
+          Total Score <span className="totalScoreNumb">{totalScore}</span>
+        </div>
         <div className="labelLife">{life}</div>
       </div>
       <div>

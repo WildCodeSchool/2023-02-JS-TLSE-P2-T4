@@ -4,11 +4,12 @@
   align-items: center;
   width: auto;
   height: 102px;
-  gap: 26px;
+  gap: 24px;
 }
 .labelTotalScore {
   display: flex;
   align-items: center;
+  justify-content: center;
   width: auto;
   height: 63px;
   padding: 7px 32px;
@@ -16,17 +17,30 @@
   background: rgba(0, 0, 0, 0.5);
   border-radius: 50px;
 }
+.labelTotalScore {
+  font-size: 1.6rem;
+  font-family: inder, sans-serif;
+}
+.totalScoreNumb {
+  font-family: iceberg;
+  font-size: 2rem;
+  font-weight: 400;
+  color: var(--secondary-color);
+}
 .labelLife {
   display: flex;
   justify-content: center;
   align-items: center;
-  width: 63px;
-  height: 63px;
+  width: 56px;
+  height: 56px;
   padding: 16px;
   background: rgba(0, 0, 0, 0.5);
   box-shadow: 0px 4px 4px rgba(0, 0, 0, 0.25);
   border-radius: 50px;
-  background-image: url("/assets/LifeBoard.svg");
+  background-image: url("/assets/redLife_Icon.svg");
   background-repeat: no-repeat;
   background-position: center;
+  background-size: 64px;
+  font-family: iceberg;
+  font-size: 1.2rem;
 }
