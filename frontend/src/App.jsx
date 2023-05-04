@@ -39,58 +39,98 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Navbar />
         <Routes>
           <Route
             path="/"
             element={
-              <Home
-                timer={timer}
-                difficulty={difficulty}
-                selectedTimer={selectedTimer}
-                setSelectedTimer={setSelectedTimer}
-                selectedDifficulty={selectedDifficulty}
-                setSelectedDifficulty={setSelectedDifficulty}
-              />
+              <>
+                <Navbar navIsVisible />
+                <Home
+                  timer={timer}
+                  difficulty={difficulty}
+                  selectedTimer={selectedTimer}
+                  setSelectedTimer={setSelectedTimer}
+                  selectedDifficulty={selectedDifficulty}
+                  setSelectedDifficulty={setSelectedDifficulty}
+                />
+              </>
             }
           />
           <Route
             path="/gameboard"
             element={
-              <GameBoard
-                selectedDifficulty={selectedDifficulty}
-                currentPosition={currentPosition}
-                setCurrentPosition={setCurrentPosition}
-                totalScore={totalScore}
-                setTotalScore={setTotalScore}
-                currentScore={currentScore}
-                setCurrentScore={setCurrentScore}
-                roundEnd={roundEnd}
-                setRoundEnd={setRoundEnd}
-                roundValid={roundValid}
-                setRoundValid={setRoundValid}
-                life={life}
-                setLife={setLife}
-              />
+              <>
+                <Navbar />
+                <GameBoard
+                  selectedDifficulty={selectedDifficulty}
+                  currentPosition={currentPosition}
+                  setCurrentPosition={setCurrentPosition}
+                  totalScore={totalScore}
+                  setTotalScore={setTotalScore}
+                  currentScore={currentScore}
+                  setCurrentScore={setCurrentScore}
+                  roundEnd={roundEnd}
+                  setRoundEnd={setRoundEnd}
+                  roundValid={roundValid}
+                  setRoundValid={setRoundValid}
+                  life={life}
+                  setLife={setLife}
+                />
+              </>
             }
           />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/winner" element={<Winner totalScore={totalScore} />} />
-          <Route path="/loser" element={<Loser totalScore={totalScore} />} />
+          <Route
+            path="/about-us"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <AboutUs />
+              </>
+            }
+          />
+          <Route
+            path="/rules"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <Rules />
+              </>
+            }
+          />
+          <Route
+            path="/winner"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <Winner totalScore={totalScore} />
+              </>
+            }
+          />
+          <Route
+            path="/loser"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <Loser totalScore={totalScore} />
+              </>
+            }
+          />
           <Route
             path="/gameboard/quiz"
             element={
-              <Quiz
-                selectedTimer={selectedTimer}
-                selectedDifficulty={selectedDifficulty}
-                currentScore={currentScore}
-                setCurrentScore={setCurrentScore}
-                roundEnd={roundEnd}
-                setRoundEnd={setRoundEnd}
-                roundValid={roundValid}
-                setRoundValid={setRoundValid}
-              />
+              <>
+                <Navbar />
+                <Quiz
+                  selectedTimer={selectedTimer}
+                  selectedDifficulty={selectedDifficulty}
+                  currentScore={currentScore}
+                  setCurrentScore={setCurrentScore}
+                  roundEnd={roundEnd}
+                  setRoundEnd={setRoundEnd}
+                  roundValid={roundValid}
+                  setRoundValid={setRoundValid}
+                />
+              </>
             }
           />
         </Routes>

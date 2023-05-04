@@ -4,10 +4,9 @@
   justify-content: space-between;
   height: 10vh;
   background: transparent;
-  padding: 0 16px 0px 8px;
 }
 .appLogo img {
-  width: 90px; 
+  width: 90px;
   color: #fff;
   cursor: pointer;
 }
@@ -16,7 +15,7 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  gap: 4rem;
+  gap: 2rem;
 }
 .navToggler {
   display: none;
@@ -27,6 +26,11 @@
   margin: 0.4rem;
   background: #fff;
   transition: 0.3s ease-in;
+}
+
+.exit img{
+  height: 40px;
+  margin-right: 18px;
 }
 
 @media screen and (max-width: 768px) {
@@ -41,7 +45,7 @@
   .navToggler:focus {
     outline: none;
   }
-
+  
   .appLogo img {
     display: block;
     width: 74px;
@@ -53,22 +57,23 @@
     position: fixed;
     top: 8vh;
     right: 0;
-    height: 32vh;
-    width: 40vw;
+    height: 26vh;
+    width: 29vw;
     flex-direction: column;
-    justify-content: space-evenly;
     transform: translateX(100%);
-    transition: 0.5s ease-in;
-    background: rgba(0, 0, 0, 0.9);
+    transition: 0.8s ease-in;
+    background:var(--bg-black-transparent);
     z-index: 2;
     padding: 28px;
     border-radius: 14px;
   }
+
+  
 }
 
 .navActive {
   transform: translateX(0%);
-}
+} 
 
 /* Toggle Icon Animation */
 
@@ -80,4 +85,16 @@
 }
 .toggle .line3 {
   transform: rotate(45deg) translate(-8px, -5px);
+}
+.navItem {
+  color: white;
+  border: 1px solid transparent;
+  border-radius: 3px;
+  text-decoration: none;
+  padding: 4px 8px;
+}
+.navItem:hover {
+  transition: 0.5s;
+  color: yellow;
+  border: 1px solid white;
 }
