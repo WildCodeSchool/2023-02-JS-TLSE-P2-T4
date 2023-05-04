@@ -25,7 +25,7 @@ function App() {
     { valueD: "hard" },
     { valueD: "combined" },
   ];
-  const [selectedTimer, setSelectedTimer] = useState({ valueT: 60 });
+  const [selectedTimer, setSelectedTimer] = useState({ valueT: 2 });
   const [selectedDifficulty, setSelectedDifficulty] = useState({
     valueD: "easy",
   });
@@ -38,6 +38,7 @@ function App() {
   const [valueSquare, setValueSquare] = useState([]);
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [buttonBoard, setButtonBoard] = useState(0);
+  const [combinedDifficulty, setCombinedDifficulty] = useState("easy");
 
   return (
     <Router>
@@ -130,14 +131,18 @@ function App() {
               <>
                 <Navbar />
                 <Quiz
+                  currentPosition={currentPosition}
                   selectedTimer={selectedTimer}
                   selectedDifficulty={selectedDifficulty}
+                  setSelectedDifficulty={setSelectedDifficulty}
                   currentScore={currentScore}
                   setCurrentScore={setCurrentScore}
                   roundEnd={roundEnd}
                   setRoundEnd={setRoundEnd}
                   roundValid={roundValid}
                   setRoundValid={setRoundValid}
+                  combinedDifficulty={combinedDifficulty}
+                  setCombinedDifficulty={setCombinedDifficulty}
                 />
               </>
             }
