@@ -49,11 +49,11 @@
   line-height: 2.4rem;
   margin: 1rem 0 1rem 0;
 }
-.normalLabel{
+.normalLabel {
   background-color: var(--bg-black-transparent);
-  color: var(--default-light-color)
+  color: var(--default-light-color);
 }
-.highScoreLabel{
+.highScoreLabel {
   color: black;
   background-color: var(--default-light-color);
 }
