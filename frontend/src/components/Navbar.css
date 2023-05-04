@@ -95,6 +95,5 @@
 }
 .navItem:hover {
   transition: 0.5s;
-  color: yellow;
-  border: 1px solid white;
+  color:var(--secondary-color);
 }
