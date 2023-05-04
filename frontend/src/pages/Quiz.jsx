@@ -18,6 +18,8 @@ function Quiz({
   currentPosition,
   combinedDifficulty,
   setCombinedDifficulty,
+  scoreStreak,
+  setScoreStreak,
 }) {
   const { state } = useLocation();
   const { category } = state;
@@ -115,6 +117,8 @@ function Quiz({
         currentScore={currentScore}
         questions={questions}
         setRoundEnd={setRoundEnd}
+        scoreStreak={scoreStreak}
+        setScoreStreak={setScoreStreak}
       />
     </div>
   ) : (
@@ -132,6 +136,8 @@ Quiz.propTypes = {
   currentPosition: PropTypes.number.isRequired,
   combinedDifficulty: PropTypes.string.isRequired,
   setCombinedDifficulty: PropTypes.func.isRequired,
+  scoreStreak: PropTypes.number.isRequired,
+  setScoreStreak: PropTypes.func.isRequired,
 };
 
 Quiz.defaultProps = {
