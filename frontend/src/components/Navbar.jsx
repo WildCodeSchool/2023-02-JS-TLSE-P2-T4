@@ -4,10 +4,6 @@ import PropTypes from "prop-types";
 import "./Navbar.css";
 
 function Navbar({ navIsVisible }) {
-  Navbar.propTypes = {
-    navIsVisible: PropTypes.bool.isRequired,
-  };
-
   const [active, setActive] = useState("navMenu");
   const [icon, setIcon] = useState("navToggler");
   const navToggle = () => {
@@ -48,10 +44,18 @@ function Navbar({ navIsVisible }) {
         </>
       ) : (
         <Link to="/" className="exit">
-          <img src="./assets/Exit_Icon.svg" alt="icon" />
+          <img src="/assets/Exit_Icon.svg" alt="icon" />
         </Link>
       )}
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  navIsVisible: PropTypes.bool,
+};
+Navbar.defaultProps = {
+  navIsVisible: false,
+};
+
 export default Navbar;

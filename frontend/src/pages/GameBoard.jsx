@@ -117,10 +117,13 @@ function GameBoard({
   setCurrentPosition,
   life,
   setLife,
+  prizeNumber,
+  setPrizeNumber,
+  valueSquare,
+  setValueSquare,
 }) {
   const navigate = useNavigate();
   const [mustSpin, setMustSpin] = useState(false);
-  const [prizeNumber, setPrizeNumber] = useState(0);
   const [showCat, setShowCat] = useState(false);
   const [showModal, setShowModal] = useState(false);
 
@@ -131,6 +134,7 @@ function GameBoard({
       setTotalScore(totalScore + currentScore);
       setRoundEnd(false);
       setRoundValid(false);
+      setValueSquare([...valueSquare, categories[prizeNumber]]);
       setCurrentPosition(currentPosition + 1);
     } else if (roundEnd && !roundValid && life > 0) {
       setTotalScore(totalScore + currentScore);
@@ -178,6 +182,7 @@ function GameBoard({
                 prizeNumber={prizeNumber}
                 roundValid={roundValid}
                 currentPosition={currentPosition}
+                valueSquare={valueSquare}
               />
             );
           })}
@@ -210,6 +215,10 @@ GameBoard.propTypes = {
   setCurrentPosition: PropTypes.func.isRequired,
   life: PropTypes.number.isRequired,
   setLife: PropTypes.func.isRequired,
+  prizeNumber: PropTypes.number.isRequired,
+  setPrizeNumber: PropTypes.func.isRequired,
+  valueSquare: PropTypes.arrayOf(PropTypes.shape).isRequired,
+  setValueSquare: PropTypes.func.isRequired,
 };
 
 export default GameBoard;
