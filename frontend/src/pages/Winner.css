@@ -62,8 +62,8 @@
   display: flex;
   justify-content: center;
 }
-button:hover,
-button:focus {
+.newGame:hover,
+.newGame:focus {
   border-color: var(--secondary-color);
   color: var(--secondary-color);
 }
