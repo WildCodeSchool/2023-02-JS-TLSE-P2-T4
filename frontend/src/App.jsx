@@ -25,7 +25,7 @@ function App() {
     { valueD: "hard" },
     { valueD: "combined" },
   ];
-  const [selectedTimer, setSelectedTimer] = useState({ valueT: 2 });
+  const [selectedTimer, setSelectedTimer] = useState({ valueT: 60 });
   const [selectedDifficulty, setSelectedDifficulty] = useState({
     valueD: "easy",
   });
