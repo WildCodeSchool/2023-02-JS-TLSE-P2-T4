@@ -62,7 +62,11 @@ const categories = [
     name: "General Knowledge",
     category: 9,
     option: "General Knowledge",
-    image: { uri: "/assets/GeneralKnowledge_Icon.svg", offsetY: 160 },
+    image: {
+      uri: "/assets/GeneralKnowledge_Icon.svg",
+      offsetY: 160,
+      coloredUri: "/assets/ColoredGeneralKnowledge_Icon.svg",
+    },
     style: {
       backgroundColor: "#b260ce",
     },
@@ -71,35 +75,55 @@ const categories = [
     name: "Music",
     category: 12,
     option: "Music",
-    image: { uri: "/assets/Music_Icon.svg", offsetY: 160 },
+    image: {
+      uri: "/assets/Music_Icon.svg",
+      offsetY: 160,
+      coloredUri: "/assets/ColoredMusic_Icon.svg",
+    },
     style: { backgroundColor: "#ffa621" },
   },
   {
     name: "Video Games",
     category: 15,
     option: "Video Games",
-    image: { uri: "/assets/VideoGames_Icon.svg", offsetY: 160 },
+    image: {
+      uri: "/assets/VideoGames_Icon.svg",
+      offsetY: 160,
+      coloredUri: "/assets/ColoredVideoGames_Icon.svg",
+    },
     style: { backgroundColor: "#ff5858" },
   },
   {
     name: "Science & nature",
     category: 17,
     option: "Science & nature",
-    image: { uri: "/assets/Science&Nature_Icon.svg", offsetY: 160 },
+    image: {
+      uri: "/assets/Science&Nature_Icon.svg",
+      offsetY: 160,
+      coloredUri: "/assets/ColoredScience&Nature_Icon.svg",
+    },
     style: { backgroundColor: "#557aff" },
   },
   {
     name: "Geography",
     category: 22,
     option: "Geography",
-    image: { uri: "/assets/Geography_Icon.svg", offsetY: 160 },
+    image: {
+      uri: "/assets/Geography_Icon.svg",
+      offsetY: 160,
+      coloredUri: "/assets/ColoredGeography_Icon.svg",
+    },
     style: { backgroundColor: "#ffe663" },
   },
   {
     name: "History",
     category: 23,
     option: "History",
-    image: { uri: "/assets/History_Icon.svg", offsetY: 160 },
+    image: {
+      uri: "/assets/History_Icon.svg",
+      offsetY: 160,
+      coloredUri: "/assets/ColoredHistory_Icon.svg",
+    },
     style: { backgroundColor: "#68e4ff" },
   },
 ];
