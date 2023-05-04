@@ -46,7 +46,7 @@ const LaunchButton = styled.button`
     grid-area: 2/3/4/6;
     align-self: center;
     margin: 0 auto;
-    width: 40%;
+    width: ${({ width }) => (width ? "57%" : "40%")};
     height: 8%;
     display: flex;
     justify-content: center;
@@ -121,6 +121,8 @@ function GameBoard({
   setPrizeNumber,
   valueSquare,
   setValueSquare,
+  buttonBoard,
+  setButtonBoard,
 }) {
   const navigate = useNavigate();
   const [mustSpin, setMustSpin] = useState(false);
@@ -128,14 +130,24 @@ function GameBoard({
   const [showModal, setShowModal] = useState(false);
 
   useEffect(() => {
-    if (!roundValid && !roundEnd && currentPosition === 16) {
-      navigate("/winner");
+    if (roundValid && roundEnd && currentPosition === 14) {
+      setTotalScore(totalScore + currentScore);
+      setRoundEnd(false);
+      setRoundValid(false);
+      setValueSquare([...valueSquare, categories[prizeNumber]]);
+      setCurrentPosition(currentPosition + 1);
+      setButtonBoard(1);
     } else if (roundValid && roundEnd) {
       setTotalScore(totalScore + currentScore);
       setRoundEnd(false);
       setRoundValid(false);
       setValueSquare([...valueSquare, categories[prizeNumber]]);
       setCurrentPosition(currentPosition + 1);
+      if (currentPosition === 4) {
+        setLife(life + 1);
+      } else if (currentPosition === 9) {
+        setLife(life + 1);
+      }
     } else if (roundEnd && !roundValid && life > 0) {
       setTotalScore(totalScore + currentScore);
       setLife(life - 1);
@@ -143,7 +155,7 @@ function GameBoard({
     } else if (roundEnd && life <= 0) {
       setTotalScore(totalScore + currentScore);
       setRoundEnd(false);
-      navigate("/loser");
+      setButtonBoard(2);
     }
   }, [roundEnd]);
 
@@ -160,7 +172,6 @@ function GameBoard({
       setRoundValid(false);
     }
   };
-
   return (
     <div>
       <div className="labelTotalScoreLife">
@@ -186,7 +197,16 @@ function GameBoard({
               />
             );
           })}
-          <LaunchButton onClick={handleSpinClick}>Launch</LaunchButton>
+          {!buttonBoard ? (
+            <LaunchButton onClick={handleSpinClick}>Launch</LaunchButton>
+          ) : (
+            <LaunchButton
+              width
+              onClick={() => navigate(buttonBoard === 1 ? "/winner" : "/loser")}
+            >
+              {buttonBoard === 1 ? "Winner Results" : "Loser Results"}
+            </LaunchButton>
+          )}
         </BoardGrid>
         <SpinWheel
           categories={categories}
@@ -219,6 +239,8 @@ GameBoard.propTypes = {
   setPrizeNumber: PropTypes.func.isRequired,
   valueSquare: PropTypes.arrayOf(PropTypes.shape).isRequired,
   setValueSquare: PropTypes.func.isRequired,
+  buttonBoard: PropTypes.number.isRequired,
+  setButtonBoard: PropTypes.func.isRequired,
 };
 
 export default GameBoard;
