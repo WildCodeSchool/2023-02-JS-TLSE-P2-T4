@@ -28,7 +28,9 @@ function Navbar({ navIsVisible }) {
         <>
           <ul className={active} onClick={navToggle} aria-hidden>
             <li className="navItem">
-              <Link to="/">Home</Link>
+              <Link to="/" reloadDocument>
+                Home
+              </Link>
             </li>
             <li className="navItem">
               <Link to="/rules">Rules</Link>
