@@ -8,7 +8,7 @@ function Rules() {
         <h2>Quiz game rules</h2>
       </div>
       <div className="rulesExplication">
-        <p className="rulesParaph">
+        <div className="rulesParaph">
           <span>Number of Players: </span> 1 <br />
           <span>Player Objective:</span>
           Navigate the game board by correctly answering quiz questions to reach
@@ -19,12 +19,12 @@ function Rules() {
           2. Roll the wheel by clicking "Roll." The wheel will select a quiz
           theme at random for the current square.
           <br />
-          <p>
+          <div>
             3. Once the theme is selected, a timed quiz will appear. Answer the
             questions correctly to validate the theme based on the score. If you
             answer multiple questions correctly in a row, your score will
             increase more quickly.
-          </p>
+          </div>
           <br /> 4. If you answer correctly, the square will be colored based on
           the theme and you can move on to the next square. If you answer
           incorrectly, you will return to the starting square. However, a
@@ -35,7 +35,7 @@ function Rules() {
           6. You win when you reach the exit.
           <br /> <br />
           <span className="fun">Good luck and have fun!</span>
-        </p>
+        </div>
       </div>
     </div>
   );
