@@ -3,22 +3,20 @@ import styled from "styled-components";
 const Square = styled.div`
   width: 100px;
   height: 100px;
-  border: ${({ currentPosition, id, categories, prizeNumber }) =>
-    currentPosition === id
-      ? `3px solid ${categories[prizeNumber].style.backgroundColor}`
+  border: ${({ currentPosition, id, valueSquare }) =>
+    currentPosition >= id
+      ? `3px solid ${valueSquare[id - 1].style.backgroundColor}`
       : "3px solid rgba(255, 255, 255, 0.15)"};
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.4);
-  background-image: ${({ currentPosition, id, categories, prizeNumber }) =>
-    currentPosition === id
-      ? `url(${categories[prizeNumber].image.uri})`
-      : "none"};
+  background-image: ${({ currentPosition, id, valueSquare }) =>
+    currentPosition >= id ? `url(${valueSquare[id - 1].image.uri})` : "none"};
   background-repeat: ${({ currentPosition, id }) =>
-    currentPosition === id && "no-repeat"};
+    currentPosition >= id && "no-repeat"};
   background-position: ${({ currentPosition, id }) =>
-    currentPosition === id && "center"};
+    currentPosition >= id && "center"};
   background-size: ${({ currentPosition, id }) =>
-    currentPosition === id && "110px"};
+    currentPosition >= id && "110px"};
   grid-row: ${({ positionRowMobile }) => positionRowMobile};
   grid-column: ${({ positionColMobile }) => positionColMobile};
   &:hover {
