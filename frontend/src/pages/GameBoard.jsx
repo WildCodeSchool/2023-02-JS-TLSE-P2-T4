@@ -169,10 +169,15 @@ function GameBoard({
             return (
               <Square
                 key={el.id}
+                id={el.id}
                 positionColMobile={el.YM}
                 positionRowMobile={el.XM}
                 positionColDesk={el.YD}
                 positionRowDesk={el.XD}
+                categories={categories}
+                prizeNumber={prizeNumber}
+                roundValid={roundValid}
+                currentPosition={currentPosition}
               />
             );
           })}
