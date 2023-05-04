@@ -39,7 +39,6 @@ function App() {
   return (
     <Router>
       <div className="app">
-        <Navbar />
         <Routes>
           <Route
             path="/"
@@ -107,12 +106,20 @@ function App() {
               </>
             }
           />
-          <Route path="/loser" element={<Loser totalScore={totalScore} />} />
+          <Route
+            path="/loser"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <Loser totalScore={totalScore} />
+              </>
+            }
+          />
           <Route
             path="/gameboard/quiz"
             element={
               <>
-                <Navbar navIsVisible />
+                <Navbar />
                 <Quiz
                   selectedTimer={selectedTimer}
                   selectedDifficulty={selectedDifficulty}
