@@ -5,13 +5,13 @@
   align-items: center;
   color: var(--default-light-color);
   line-height: 4.2vh;
+  font-family: inder, sans-serif;
 }
 
 .rulesHead {
   margin-top: 40px;
   font-size: 3.2rem;
   margin-bottom: 24px;
-  color: var(--default-light-color);
   font-family: Iceberg, sans-serif;
 }
 .rulesExplication {
@@ -27,7 +27,6 @@
 
 .rulesExplication h2 {
   font-weight: 500;
-  font-family: inder, sans-serif;
   font-size: 2rem;
   margin-bottom: 16px;
   color: var(--secondary-color);
@@ -35,9 +34,11 @@
 
 .gameRules span {
   color: var(--music-color);
+  font-size: 1.6rem;
+  font-family: iceberg;
 }
 .gameRules p {
-  margin-top: 24px;
+  margin-bottom: 24px;
 }
 
 .fun {
@@ -59,9 +60,9 @@
   .rulesExplication {
     width: 50%;
     gap: 48px;
+    font-size: 1.4rem;
   }
-  .fun {
-    font-size: 3rem;
-    color: var(--default-light-color);
+  .gameRules p {
+    margin-bottom: 32px;
   }
 }
