@@ -55,9 +55,9 @@ body {
 }
 
 button {
+  color: var(--default-light-color);
   width: auto;
   border-radius: 50px;
-  color: var(--default-light-color);
   border: 3px solid rgba(255, 255, 255, 0.2);
   padding: 0.6em 1.2em;
   font-size: 1.6rem;

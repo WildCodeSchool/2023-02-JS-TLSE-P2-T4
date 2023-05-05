@@ -18,7 +18,7 @@ const Square = styled.div`
   background-position: ${({ currentPosition, id }) =>
     currentPosition >= id && "center"};
   background-size: ${({ currentPosition, id }) =>
-    currentPosition >= id && "110px"};
+    currentPosition >= id && "80px"};
   grid-row: ${({ positionRowMobile }) => positionRowMobile};
   grid-column: ${({ positionColMobile }) => positionColMobile};
   &:hover {
@@ -31,6 +31,8 @@ const Square = styled.div`
     height: 160px;
     grid-row: ${({ positionRowDesk }) => positionRowDesk};
     grid-column: ${({ positionColDesk }) => positionColDesk};
+    background-size: ${({ currentPosition, id }) =>
+      currentPosition >= id && "110px"};
   }
 `;
 
