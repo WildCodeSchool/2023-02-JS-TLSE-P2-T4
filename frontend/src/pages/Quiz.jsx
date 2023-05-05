@@ -82,7 +82,7 @@ function Quiz({
   }, []);
 
   useEffect(() => {
-    if (currentScore >= 60) {
+    if (currentScore >= 80) {
       setRoundValid(true);
     }
   }, [currentScore]);
