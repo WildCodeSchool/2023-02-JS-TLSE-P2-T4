@@ -4,10 +4,6 @@ import PropTypes from "prop-types";
 import "./Navbar.css";
 
 function Navbar({ navIsVisible }) {
-  Navbar.propTypes = {
-    navIsVisible: PropTypes.bool.isRequired,
-  };
-
   const [active, setActive] = useState("navMenu");
   const [icon, setIcon] = useState("navToggler");
   const navToggle = () => {
@@ -32,7 +28,9 @@ function Navbar({ navIsVisible }) {
         <>
           <ul className={active} onClick={navToggle} aria-hidden>
             <li className="navItem">
-              <Link to="/">Home</Link>
+              <Link to="/" reloadDocument>
+                Home
+              </Link>
             </li>
             <li className="navItem">
               <Link to="/rules">Rules</Link>
@@ -55,4 +53,12 @@ function Navbar({ navIsVisible }) {
     </nav>
   );
 }
+
+Navbar.propTypes = {
+  navIsVisible: PropTypes.bool,
+};
+Navbar.defaultProps = {
+  navIsVisible: true,
+};
+
 export default Navbar;
