@@ -58,7 +58,7 @@ Navbar.propTypes = {
   navIsVisible: PropTypes.bool,
 };
 Navbar.defaultProps = {
-  navIsVisible: true,
+  navIsVisible: false,
 };
 
 export default Navbar;

@@ -89,12 +89,12 @@ figcaption {
   figcaption {
     font-size: 1.6rem;
   }
-
   .title {
     font-size: 2.2rem;
     text-align: left;
   }
   .figures {
     justify-content: space-between;
+    flex-wrap: nowrap;
   }
 }
