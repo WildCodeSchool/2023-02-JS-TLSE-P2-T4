@@ -128,7 +128,7 @@ function GameBoard({
   const [mustSpin, setMustSpin] = useState(false);
   const [showCat, setShowCat] = useState(false);
   const [showModal, setShowModal] = useState(false);
-  const width = true;
+  const width = "true";
 
   useEffect(() => {
     if (roundValid && roundEnd && currentPosition === 14) {

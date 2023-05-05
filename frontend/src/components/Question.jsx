@@ -10,6 +10,8 @@ function Question({
   currentScore,
   setCurrentScore,
   setRoundEnd,
+  scoreStreak,
+  setScoreStreak,
 }) {
   const oneQuestion = questions[currentQuest];
   // eslint-disable-next-line
@@ -46,7 +48,10 @@ function Question({
   // effet permettant d'incrémenter le score si une réponse est sélectionnée et si la réponse est correcte
   useEffect(() => {
     if (clicked && selectedAnswer === correctAnswer) {
-      setCurrentScore(currentScore + 10);
+      setCurrentScore(currentScore + 10 + scoreStreak);
+      setScoreStreak(scoreStreak + 1);
+    } else if (clicked && selectedAnswer !== correctAnswer) {
+      setScoreStreak(0);
     }
   }, [clicked, selectedAnswer]);
 
@@ -123,6 +128,8 @@ Question.propTypes = {
   currentScore: PropTypes.number,
   setCurrentScore: PropTypes.func,
   setRoundEnd: PropTypes.func.isRequired,
+  scoreStreak: PropTypes.number.isRequired,
+  setScoreStreak: PropTypes.func.isRequired,
 };
 
 Question.defaultProps = {

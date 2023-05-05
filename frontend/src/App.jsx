@@ -39,6 +39,7 @@ function App() {
   const [prizeNumber, setPrizeNumber] = useState(0);
   const [buttonBoard, setButtonBoard] = useState(0);
   const [combinedDifficulty, setCombinedDifficulty] = useState("easy");
+  const [scoreStreak, setScoreStreak] = useState(0);
 
   return (
     <Router>
@@ -143,6 +144,8 @@ function App() {
                   setRoundValid={setRoundValid}
                   combinedDifficulty={combinedDifficulty}
                   setCombinedDifficulty={setCombinedDifficulty}
+                  scoreStreak={scoreStreak}
+                  setScoreStreak={setScoreStreak}
                 />
               </>
             }
