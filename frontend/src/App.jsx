@@ -25,7 +25,7 @@ function App() {
     { valueD: "hard" },
     { valueD: "combined" },
   ];
-  const [selectedTimer, setSelectedTimer] = useState({ valueT: 45 });
+  const [selectedTimer, setSelectedTimer] = useState({ valueT: 60 });
   const [selectedDifficulty, setSelectedDifficulty] = useState({
     valueD: "easy",
   });
@@ -35,62 +35,119 @@ function App() {
   const [roundEnd, setRoundEnd] = useState(false);
   const [roundValid, setRoundValid] = useState(false);
   const [life, setLife] = useState(1);
+  const [valueSquare, setValueSquare] = useState([]);
+  const [prizeNumber, setPrizeNumber] = useState(0);
+  const [buttonBoard, setButtonBoard] = useState(0);
+  const [combinedDifficulty, setCombinedDifficulty] = useState("easy");
+  const [scoreStreak, setScoreStreak] = useState(0);
 
   return (
     <Router>
       <div className="app">
-        <Navbar />
         <Routes>
           <Route
             path="/"
             element={
-              <Home
-                timer={timer}
-                difficulty={difficulty}
-                selectedTimer={selectedTimer}
-                setSelectedTimer={setSelectedTimer}
-                selectedDifficulty={selectedDifficulty}
-                setSelectedDifficulty={setSelectedDifficulty}
-              />
+              <>
+                <Navbar navIsVisible />
+                <Home
+                  timer={timer}
+                  difficulty={difficulty}
+                  selectedTimer={selectedTimer}
+                  setSelectedTimer={setSelectedTimer}
+                  selectedDifficulty={selectedDifficulty}
+                  setSelectedDifficulty={setSelectedDifficulty}
+                />
+              </>
             }
           />
           <Route
             path="/gameboard"
             element={
-              <GameBoard
-                selectedDifficulty={selectedDifficulty}
-                currentPosition={currentPosition}
-                setCurrentPosition={setCurrentPosition}
-                totalScore={totalScore}
-                setTotalScore={setTotalScore}
-                currentScore={currentScore}
-                setCurrentScore={setCurrentScore}
-                roundEnd={roundEnd}
-                setRoundEnd={setRoundEnd}
-                roundValid={roundValid}
-                setRoundValid={setRoundValid}
-                life={life}
-                setLife={setLife}
-              />
+              <>
+                <Navbar />
+                <GameBoard
+                  selectedDifficulty={selectedDifficulty}
+                  currentPosition={currentPosition}
+                  setCurrentPosition={setCurrentPosition}
+                  totalScore={totalScore}
+                  setTotalScore={setTotalScore}
+                  currentScore={currentScore}
+                  setCurrentScore={setCurrentScore}
+                  roundEnd={roundEnd}
+                  setRoundEnd={setRoundEnd}
+                  roundValid={roundValid}
+                  setRoundValid={setRoundValid}
+                  life={life}
+                  setLife={setLife}
+                  prizeNumber={prizeNumber}
+                  setPrizeNumber={setPrizeNumber}
+                  valueSquare={valueSquare}
+                  setValueSquare={setValueSquare}
+                  buttonBoard={buttonBoard}
+                  setButtonBoard={setButtonBoard}
+                />
+              </>
             }
           />
-          <Route path="/about-us" element={<AboutUs />} />
-          <Route path="/rules" element={<Rules />} />
-          <Route path="/winner" element={<Winner totalScore={totalScore} />} />
-          <Route path="/loser" element={<Loser totalScore={totalScore} />} />
+          <Route
+            path="/about-us"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <AboutUs />
+              </>
+            }
+          />
+          <Route
+            path="/rules"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <Rules />
+              </>
+            }
+          />
+          <Route
+            path="/winner"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <Winner totalScore={totalScore} />
+              </>
+            }
+          />
+          <Route
+            path="/loser"
+            element={
+              <>
+                <Navbar navIsVisible />
+                <Loser totalScore={totalScore} />
+              </>
+            }
+          />
           <Route
             path="/gameboard/quiz"
             element={
-              <Quiz
-                selectedTimer={selectedTimer}
-                selectedDifficulty={selectedDifficulty}
-                currentScore={currentScore}
-                setCurrentScore={setCurrentScore}
-                roundEnd={roundEnd}
-                setRoundEnd={setRoundEnd}
-                roundValid={roundValid}
-                setRoundValid={setRoundValid}
-              />
+              <>
+                <Navbar />
+                <Quiz
+                  currentPosition={currentPosition}
+                  selectedTimer={selectedTimer}
+                  selectedDifficulty={selectedDifficulty}
+                  setSelectedDifficulty={setSelectedDifficulty}
+                  currentScore={currentScore}
+                  setCurrentScore={setCurrentScore}
+                  roundEnd={roundEnd}
+                  setRoundEnd={setRoundEnd}
+                  roundValid={roundValid}
+                  setRoundValid={setRoundValid}
+                  combinedDifficulty={combinedDifficulty}
+                  setCombinedDifficulty={setCombinedDifficulty}
+                  scoreStreak={scoreStreak}
+                  setScoreStreak={setScoreStreak}
+                />
+              </>
             }
           />
         </Routes>

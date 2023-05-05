@@ -1,5 +1,7 @@
 @import url("https://fonts.googleapis.com/css2?family=Raleway:wght@700&display=swap");
 @import url("https://fonts.googleapis.com/css2?family=Libre+Franklin:wght@200;400&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Iceberg&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Inder&display=swap");
 
 :root {
   --default-light-color: #fffbf2;
@@ -16,7 +18,6 @@
   line-height: 1.5;
   font-weight: 400;
 
-  color-scheme: light dark;
   color: var(--default-light-color);
 
   -webkit-font-smoothing: antialiased;
@@ -54,6 +55,7 @@ body {
 }
 
 button {
+  color: var(--default-light-color);
   width: auto;
   border-radius: 50px;
   border: 3px solid rgba(255, 255, 255, 0.2);

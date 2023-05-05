@@ -6,6 +6,7 @@ import axios from "axios";
 import Question from "../components/Question";
 import Timer from "../components/Timer";
 import "./Quiz.css";
+import Loader from "../components/Loader";
 
 function Quiz({
   selectedTimer,
@@ -14,6 +15,11 @@ function Quiz({
   setCurrentScore,
   setRoundEnd,
   setRoundValid,
+  currentPosition,
+  combinedDifficulty,
+  setCombinedDifficulty,
+  scoreStreak,
+  setScoreStreak,
 }) {
   const { state } = useLocation();
   const { category } = state;
@@ -23,12 +29,21 @@ function Quiz({
   const [questions, setQuestions] = useState();
   // state permettant de mettre à jour la question affichée de façon randomisée
   const [currentQuest, setCurrentQuest] = useState();
-
+  function ternaryDifficulty() {
+    if (valueD === "combined" && currentPosition < 5) {
+      setCombinedDifficulty("easy");
+    } else if (valueD === "combined" && currentPosition < 10) {
+      setCombinedDifficulty("medium");
+    } else if (valueD === "combined") {
+      setCombinedDifficulty("hard");
+    } else setCombinedDifficulty(valueD);
+  }
   // fetch des données
   useEffect(() => {
+    ternaryDifficulty();
     axios
       .get(
-        `https://opentdb.com/api.php?amount=30&category=${category}&difficulty=${valueD}&type=multiple`
+        `https://opentdb.com/api.php?amount=30&category=${category}&difficulty=${combinedDifficulty}&type=multiple`
       )
       .then((res) => {
         // eslint-disable-next-line
@@ -67,45 +82,47 @@ function Quiz({
   }, []);
 
   useEffect(() => {
-    if (currentScore >= 60) {
+    if (currentScore >= 80) {
       setRoundValid(true);
     }
   }, [currentScore]);
 
-  return (
-    questions && (
-      <div className="quizContainer">
-        <div className="quizHeader">
-          <div className="score">
-            <p>
-              Score : <span className="scoreNumb">{currentScore}</span>
-            </p>
-          </div>
-          <div className="timer">
-            <img
-              className="timeIcon"
-              src="\assets\Timer_Icon.svg"
-              alt="time icon"
-            />
-            <Timer
-              valueT={valueT}
-              setRoundEnd={setRoundEnd}
-              selectedTimer={selectedTimer}
-            />
-          </div>
+  return questions ? (
+    <div className="quizContainer">
+      <div className="quizHeader">
+        <div className="score">
+          <p>
+            Score : <span className="scoreNumb">{currentScore}</span>
+          </p>
         </div>
-
-        <Question
-          key={currentQuest}
-          currentQuest={currentQuest}
-          setCurrentQuest={setCurrentQuest}
-          setCurrentScore={setCurrentScore}
-          currentScore={currentScore}
-          questions={questions}
-          setRoundEnd={setRoundEnd}
-        />
+        <div className="timer">
+          <img
+            className="timeIcon"
+            src="\assets\Timer_Icon.svg"
+            alt="time icon"
+          />
+          <Timer
+            valueT={valueT}
+            setRoundEnd={setRoundEnd}
+            selectedTimer={selectedTimer}
+          />
+        </div>
       </div>
-    )
+
+      <Question
+        key={currentQuest}
+        currentQuest={currentQuest}
+        setCurrentQuest={setCurrentQuest}
+        setCurrentScore={setCurrentScore}
+        currentScore={currentScore}
+        questions={questions}
+        setRoundEnd={setRoundEnd}
+        scoreStreak={scoreStreak}
+        setScoreStreak={setScoreStreak}
+      />
+    </div>
+  ) : (
+    <Loader />
   );
 }
 
@@ -116,6 +133,11 @@ Quiz.propTypes = {
   setCurrentScore: PropTypes.func.isRequired,
   setRoundEnd: PropTypes.func.isRequired,
   setRoundValid: PropTypes.func.isRequired,
+  currentPosition: PropTypes.number.isRequired,
+  combinedDifficulty: PropTypes.string.isRequired,
+  setCombinedDifficulty: PropTypes.func.isRequired,
+  scoreStreak: PropTypes.number.isRequired,
+  setScoreStreak: PropTypes.func.isRequired,
 };
 
 Quiz.defaultProps = {
