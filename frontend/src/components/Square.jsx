@@ -5,12 +5,14 @@ const Square = styled.div`
   height: 100px;
   border: ${({ currentPosition, id, valueSquare }) =>
     currentPosition >= id
-      ? `3px solid ${valueSquare[id - 1].style.backgroundColor}`
+      ? `4px solid ${valueSquare[id - 1].style.backgroundColor}`
       : "3px solid rgba(255, 255, 255, 0.15)"};
   border-radius: 10px;
   background-color: rgba(0, 0, 0, 0.4);
   background-image: ${({ currentPosition, id, valueSquare }) =>
-    currentPosition >= id ? `url(${valueSquare[id - 1].image.uri})` : "none"};
+    currentPosition >= id
+      ? `url(${valueSquare[id - 1].image.coloredUri})`
+      : "none"};
   background-repeat: ${({ currentPosition, id }) =>
     currentPosition >= id && "no-repeat"};
   background-position: ${({ currentPosition, id }) =>
