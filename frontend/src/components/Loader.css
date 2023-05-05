@@ -9,7 +9,7 @@
 .loader > p {
   font-family: Iceberg;
   color: transparent;
-  font-size: 8rem;
+  font-size: 4rem;
   letter-spacing: 1rem;
   margin-bottom: 150px;
   animation: flash 1s linear infinite;
@@ -36,5 +36,11 @@
   100% {
     color: #ffd84d;
     text-shadow: #ffd84d;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .loader > p {
+    font-size: 8rem;
   }
 }
